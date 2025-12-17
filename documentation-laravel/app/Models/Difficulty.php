@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Difficulty extends Model
 {
-    //
+    // db hasMany/belongsTo
 }

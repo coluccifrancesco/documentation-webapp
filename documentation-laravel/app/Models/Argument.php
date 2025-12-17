@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Argument extends Model
 {
-    //
+    // db hasMany/belongsTo
 }
