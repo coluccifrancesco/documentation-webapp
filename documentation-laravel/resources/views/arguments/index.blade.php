@@ -37,7 +37,7 @@
                             </p>
 
                             <a href="{{ $argument->documentation_link }}">
-                                <button class="btn btn-primary">{{ $argument->name }}: docs</button>
+                                <button class="btn btn-primary">docs</button>
                             </a>
                         </div>
 
