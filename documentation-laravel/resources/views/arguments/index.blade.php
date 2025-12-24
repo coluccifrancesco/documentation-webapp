@@ -8,7 +8,7 @@
     
             @auth
                 @if (Auth::user()->role === 'admin')
-                    <a href="" class="">
+                    <a href="{{ route('arguments.create') }}" class="">
                         <button class="btn btn-success">Create new argument</button>
                     </a>
                 @endif
@@ -26,14 +26,15 @@
 
                         <p class="mb-0">{{ $argument->resume }}</p>
 
-                        <div class="border rounded bg-dark text-white p-2 my-3">
-                            <p class="mb-0">{{ $argument->md_text }}</p>
-                        </div>
+                        @if ($argument->md_text != null)
+                            <div class="border rounded bg-dark text-white p-2 my-3">
+                                <p class="mb-0">MD is present</p>
+                            </div>
+                        @endif
 
                         <div class="d-flex justify-content-between align-items-center">
-                            
                             <p>
-                                {{-- Implementare le difficoltà --}}
+                                {{-- Implementare la difficoltà --}}
                             </p>
 
                             <a href="{{ $argument->documentation_link }}">
@@ -41,6 +42,25 @@
                             </a>
                         </div>
 
+                        <a href="{{ route('arguments.show', $argument->id) }}">
+                            <button class="btn btn-success w-100 my-3">Show</button>
+                        </a>
+
+                        @auth
+                            @if (Auth::user()->role === 'admin')
+                                
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <a href="">
+                                        <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
+                                    </a>
+                                    
+                                    <a href="">
+                                        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </a>
+                                </div>
+                            
+                            @endif
+                        @endauth
                     </div>
                 </div>    
             @endforeach

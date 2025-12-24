@@ -4,7 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Argument extends Model
-{
-    // db hasMany/belongsTo
+class Argument extends Model {
+    
+    public function difficulty(){
+
+        return $this->belongsTo(Difficulty::class);
+    }
 }

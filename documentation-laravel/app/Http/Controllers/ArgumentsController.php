@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Argument;
+use App\Models\Difficulty;
 use Illuminate\Http\Request;
 
 class ArgumentsController extends Controller {
@@ -13,35 +14,37 @@ class ArgumentsController extends Controller {
         return view('arguments.index', compact('arguments'));
     }
 
-    // template from Boolean lessons
-
     // Show the form for creating a new resource
-    // public function create()
-    // {
-    //     return view('categories.create');
-    // }
+    public function create()    {
+
+        // get categories
+        $difficulties = Difficulty::all();
+        
+        return view('arguments.create', compact('difficulties'));
+    }
 
     
     // Store a newly created resource in storage
-    // public function store(Request $request)
-    // {
-    //     $data = $request->all();
-    //     $newCategory = new Category();
+    public function store(Request $request){
+        $data = $request->all();
+        $newArgument = new Argument();
 
-    //     $newCategory->name = $data['name'];
-    //     $newCategory->description = $data['description'];
+        $newArgument->name = $data['name'];
+        $newArgument->resume = $data['resume'];
+        $newArgument->md_text = $data['md_text'];
+        $newArgument->difficulty_id = $data['difficulty_id'];
+        $newArgument->documentation_link = $data['documentation_link'];
 
-    //     $newCategory->save();
+        $newArgument->save();
 
-    //     return redirect()->route('categories.show', $newCategory);
-    // }
+        return redirect()->route('arguments.show', $newArgument);
+    }
 
     
     //  Display the specified resource
-    // public function show(Category $category)
-    // {
-    //     return view('categories.show', compact('category'));
-    // }
+    public function show(Argument $argument){
+        return view('arguments.show', compact('argument'));
+    }
 
     
     // Show the form for editing the specified resource
