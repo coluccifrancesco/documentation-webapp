@@ -14,7 +14,7 @@ return new class extends Migration {
             
             $table->string('name');
             $table->text('resume');
-            $table->text('md_text');
+            $table->text('md_text')->nullable();
             $table->smallInteger('difficulty_id');
             $table->string('documentation_link');
             

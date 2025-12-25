@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="container mx-auto">
+    <div class="mx-auto container">
 
         <div class="mt-4 mx-3 d-flex justify-content-between align-items-center">
             <h2 class="mb-0">Argument's list</h2>
@@ -59,11 +59,11 @@
                             {{-- Shows if the markdown is present --}}
                             @if ($argument->md_text != null)
                                 <div class="border rounded bg-dark text-white p-2">
-                                    <p class="mb-0">MD is present</p>
+                                    <p class="mb-0">MD present</p>
                                 </div>
                             @else
                                 <div class="border rounded bg-danger text-white p-2">
-                                    <p class="mb-0">MD isn't present</p>
+                                    <p class="mb-0">No MD</p>
                                 </div> 
                             @endif
 
