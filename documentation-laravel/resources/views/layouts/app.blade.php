@@ -88,11 +88,12 @@
         </nav>
 
         <main class="row m-2">
+            {{-- If viewer is on more than bootstrap's "md" toggles the side navbar --}}
             <section class="d-none d-md-block col-md-3 my-4">
 
                 {{-- Aggiustare l'estetica della navbar --}}
                 <nav class="border rounded p-3">
-                    <ul class="list-unstyled d-flex flex-column align-items-start gap-4">
+                    <ul class="list-unstyled d-flex flex-column align-items-start gap-4 mb-0">
                         
                         <li>
                             <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">

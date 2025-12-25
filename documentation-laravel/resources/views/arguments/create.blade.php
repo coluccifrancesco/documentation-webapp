@@ -5,7 +5,7 @@
     @auth
         @if (Auth::user()->role === 'admin')
             
-            <form action="{{ route('arguments.store') }}" method="POST" enctype="multipart/form-data" class="w-50 mx-auto mt-5 border rounded p-4">
+            <form action="{{ route('arguments.store') }}" method="POST" enctype="multipart/form-data" class="w-75 mx-auto mt-5 border rounded p-4">
                 @csrf
                 
                 <h2>Create new Argument</h2>
@@ -103,6 +103,18 @@
             </div>
         
         @endif
+
     @endauth
+
+    @guest
+        <div class="d-flex justify-content-around align-items-center flex-column my-5">
+            <h1 class="mb-0" style="font-size: 4rem;">Error 404</h1>
+            <h5 class="text-secondary" style="font-size: 1.4rem;">The page does not exist</h5>
+                
+            <a href="{{ route('arguments.index') }}" class="mt-4">
+                <button class="btn btn-primary">Home Page <i class="fa-regular fa-house"></i></button>
+            </a>
+        </div>
+    @endguest
 
 @endsection

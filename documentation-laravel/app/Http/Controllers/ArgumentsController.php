@@ -17,7 +17,7 @@ class ArgumentsController extends Controller {
     // Show the form for creating a new resource
     public function create()    {
 
-        // get categories
+        // get difficulties
         $difficulties = Difficulty::all();
         
         return view('arguments.create', compact('difficulties'));
@@ -49,10 +49,12 @@ class ArgumentsController extends Controller {
 
     
     // Show the form for editing the specified resource
-    // public function edit(Category $category)
-    // {
-    //     return view('categories.edit', compact('category'));
-    // }
+    public function edit(Argument $argument){
+
+        $difficulties = Difficulty::all();
+
+        return view('arguments.edit', compact('argument', 'difficulties'));
+    }
 
     
     // Update the specified resource in storage

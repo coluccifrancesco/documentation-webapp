@@ -15,6 +15,10 @@
             @endauth
         </div>                
             
+        {{-- 
+            RIVEDERE IL DESIGN DATO CHE LE CARATTERISTICHE DEGLI 
+            ARGOMENTI HANNO LO STESSO ASPETTO DEI BOTTONI 
+        --}}
     
         <div class="row mx-auto">
             
@@ -80,7 +84,7 @@
                         @auth
                             @if (Auth::user()->role === 'admin')
                                 <div class="d-flex align-items-center justify-content-between mt-3">
-                                    <a href="">
+                                    <a href="{{ route('arguments.edit', $argument->id) }}">
                                         <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
                                     </a>
 
