@@ -2,31 +2,22 @@
 
 @section('content')
 
-
     <div class="container">
-        
-        @auth
-            @if (Auth::user()->role === 'admin')
-                <div class="my-3">
-                    <h2>Sei l'admin</h2>
-                </div>
-            @endif
-        @endauth
-
-        <div class="d-flex align-items-center justify-content-between">
+    
+        <div class="d-flex align-items-center justify-content-between my-5">
             <h1>{{ $argument->name }}</h1>
 
             <div class="d-flex align-items-center gap-3">
                 @auth
                     @if (Auth::user()->role === 'admin')
                                     
-                            <a href="">
-                                <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
-                            </a>
+                        <a href="">
+                            <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
+                        </a>
                                         
-                            <a href="">
+                        <a href="">
                             <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                            </a>
+                        </a>
                                 
                     @endif
                 @endauth
