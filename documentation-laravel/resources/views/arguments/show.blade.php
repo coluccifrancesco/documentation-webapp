@@ -4,7 +4,7 @@
 
     <div class="container">
     
-        <div class="d-flex align-items-center justify-content-between my-5">
+        <div class="d-flex align-items-center justify-content-between mt-5 mb-2">
             <h1>{{ $argument->name }}</h1>
 
             <div class="d-flex align-items-center gap-3">
@@ -30,21 +30,43 @@
             </div>
         </div>
 
-        <p class="w-50">{{ $argument->resume }}</p>
+        <p class="w-75">{{ $argument->resume }}</p>
 
-        <div id="md_text">{{ $argument->md_text }}</div>
-
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <p class="mb-0 me-3">{{ $argument->difficulty->grade_name }}</p>
-                <p class="mb-0">{{ $argument->difficulty->grade_numerical }}</p>
-            </div>
+        <div class="d-flex justify-content-between align-items-center my-4">
+            {{-- Difficulties showed by emojis and colors on a numerical scale --}}
+            @if ($argument->difficulty->grade_numerical == 1)
+                <div class="border rounded bg-success text-white p-2 d-flex gap-2 align-items-center justify-content-between">
+                    <p class="mb-0">{{ $argument->difficulty->grade_name }}</p>
+                    <i class="fa-solid fa-face-laugh-beam"></i>
+                </div>
+            @elseif ($argument->difficulty->grade_numerical == 2)
+                <div class="border rounded bg-success text-white p-2 d-flex gap-2 align-items-center justify-content-between">
+                    <p class="mb-0">{{ $argument->difficulty->grade_name }}</p>
+                    <i class="fa-solid fa-face-grin-wink"></i>
+                </div>
+            @elseif ($argument->difficulty->grade_numerical == 3)
+                <div class="border rounded bg-warning text-dark p-2 d-flex gap-2 align-items-center justify-content-between">
+                    <p class="mb-0">{{ $argument->difficulty->grade_name }}</p>
+                    <i class="fa-solid fa-face-grin-beam-sweat"></i>
+                </div>
+            @elseif ($argument->difficulty->grade_numerical == 4)
+                <div class="border rounded bg-warning text-dark p-2 d-flex gap-2 align-items-center justify-content-between">
+                    <p class="mb-0">{{ $argument->difficulty->grade_name }}</p>
+                    <i class="fa-regular fa-face-grimace"></i>
+                </div>
+            @elseif ($argument->difficulty->grade_numerical > 4)
+                <div class="border rounded bg-danger text-white p-2 d-flex gap-2 align-items-center justify-content-between">
+                    <p class="mb-0">{{ $argument->difficulty->grade_name }}</p>
+                    <i class="fa-solid fa-face-dizzy"></i>
+                </div>
+            @endif
         
             <a href="{{ $argument->documentation_link }}">
                 <button class="btn btn-primary">Docs</button>
             </a>
         </div>
-
+        
+        <div id="md_text" class="rounded bg-dark text-white p-5">{{ $argument->md_text }}</div>
 
     </div>
 
