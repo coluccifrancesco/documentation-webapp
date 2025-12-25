@@ -42,13 +42,13 @@ class ArgumentsController extends Controller {
     }
 
     
-    //  Display the specified resource
+    //  Show the specified resource
     public function show(Argument $argument){
         return view('arguments.show', compact('argument'));
     }
 
     
-    // Show the form for editing the specified resource
+    // Form for editing the specified resource
     public function edit(Argument $argument){
 
         $difficulties = Difficulty::all();
@@ -58,32 +58,27 @@ class ArgumentsController extends Controller {
 
     
     // Update the specified resource in storage
-    // public function update(Request $request, Category $category)
-    // {
-    //     $data = $request->all();
+    public function update(Request $request, Argument $argument){
+        
+        $data = $request->all();
 
-    //     $category->name = $data['name'];
-    //     $category->description = $data['description'];
+        $argument->name = $data['name'];
+        $argument->resume = $data['resume'];
+        $argument->md_text = $data['md_text'];
+        $argument->difficulty_id = $data['difficulty_id'];
+        $argument->documentation_link = $data['documentation_link'];
 
-    //     $category->update();
+        $argument->update();
 
-    //     return redirect()->route('categories.show', $category);
-    // }
-
-    // Asks if we're sure about deleting the project
-    // public function sureOfDestroy(Category $category){
-
-    //     return view('categories.destroy', data: compact('category'));
-    // }
+        return redirect()->route('arguments.show', $argument);
+    }
 
     
     // Remove the specified resource from storage
-    // public function destroy(Category $category, Project $project) {
-    //     if ($category->project()->count() > 0) {
-    //         return back()->withErrors(['error' => 'Impossibile eliminare: categoria in uso']);
-    //     }
-        
-    //     $category->delete();
-    //     return redirect()->route('categories.index');
-    // }
+    public function destroy(Argument $argument){
+
+        $argument->delete();
+
+        return redirect()->route('arguments.index');
+    }
 }

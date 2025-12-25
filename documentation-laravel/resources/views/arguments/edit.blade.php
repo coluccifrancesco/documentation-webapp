@@ -3,20 +3,20 @@
 @section('content')
     @auth
         @if (Auth::user()->role === 'admin')
-            {{-- INSERT arguments.update --}}
-            <form action="" method="POST" enctype="multipart/form-data" class="w-75 mx-auto mt-5 border rounded p-4">
+            <form action="{{ route('arguments.update', $argument) }}" method="POST" enctype="multipart/form-data" class="w-75 mx-auto mt-5 border rounded p-4">
                 @csrf
+                @method('PUT')
                 
                 <h2>Edit '{{ $argument->name }}'</h2>
 
                 <div class="form-control mb-3 mt-4 d-flex align-items-start flex-column">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" class="w-100">
+                    <input type="text" name="name" id="name" class="w-100" value="{{ $argument->name }}">
                 </div>
 
                 <div class="form-control my-3 d-flex align-items-start flex-column">
                     <label for="resume">Resume</label>
-                    <textarea type="text" name="resume" id="resume" class="w-100"></textarea>
+                    <textarea type="text" name="resume" id="resume" class="w-100">{{ $argument->resume }}</textarea>
                 </div>
 
                 {{-- Markdown area with preview --}}
@@ -25,7 +25,7 @@
 
                     <div class="row w-100 my-2">
                         <div class="col-12 col-xl-6">
-                            <textarea type="text" name="md_text" id="md_text" class="w-100"></textarea>
+                            <textarea type="text" name="md_text" id="md_text" class="w-100">{{ $argument->md_text }}</textarea>
                         </div>
 
                         <div class="col-12 col-xl-6">
@@ -39,14 +39,18 @@
                     <label for="difficulty_id">Difficulty</label>
                     <select name="difficulty_id" id="difficulty_id" class="w-100">
                         @foreach ($difficulties as $difficulty)
-                            <option value="{{ $difficulty->id }}">{{ $difficulty->grade_name }} = {{ $difficulty->grade_numerical }}</option>
+                            <option value="{{ $difficulty->id }}"
+                                {{ $argument->difficulty_id == $difficulty->id ? 'selected' : '' }}
+                            >
+                                {{ $difficulty->grade_name }} - {{ $difficulty->grade_numerical }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="form-control my-3 d-flex align-items-start flex-column">
                     <label for="documentation_link">Documentation link</label>
-                    <input type="text" name="documentation_link" id="documentation_link" class="w-100"></input>
+                    <input type="text" name="documentation_link" id="documentation_link" class="w-100" value="{{ $argument->documentation_link }}"></input>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mt-4">
@@ -54,7 +58,7 @@
                         <a href="{{ route('arguments.index') }}" class="text-white link-underline link-underline-opacity-0">Go back<i class="ms-2 fa-solid fa-arrow-left"></i></a>
                     </button>
                     
-                    <input type="submit" value="Save" class="btn btn-success">
+                    <input type="submit" value="Update" class="btn btn-success">
                 </div>
             </form>
 
@@ -65,6 +69,7 @@
             <script>
                 let userInput = document.getElementById('md_text');
                 let parsedMd = document.getElementById('parsedMd');
+                let htmlOutput = marked.parse(userInput.value);
 
                 // Syntax highlight logic
                 marked.setOptions({
@@ -76,18 +81,21 @@
                         return code;
                     }
                 });
-                
-                userInput.addEventListener('input', () => {
+
+                function updatePreview(){
                     
                     let htmlOutput = marked.parse(userInput.value);
-                    
                     parsedMd.innerHTML = htmlOutput;
 
                     // Highlighting the syntax
                     document.querySelectorAll('pre code').forEach((block) => {
                         hljs.highlightElement(block);
                     });
-                })
+                }
+
+                updatePreview();
+                
+                userInput.addEventListener('input', updatePreview);
             </script>
         @else
             <div class="d-flex justify-content-around align-items-center flex-column my-5">

@@ -18,8 +18,6 @@ Route::get('/argument/{argument}', [ArgumentsController::class, 'show'])->name('
 
 Route::get('/argument/{argument}/edit', [ArgumentsController::class, 'edit'])->name('arguments.edit');
 
-// Route::get('/argument/{argument}/areyousure', [ArgumentsController::class, 'sureOfDestroy'])->name('arguments.sureOfDestroy');
-
 
 
 // Post - Arguments
@@ -28,12 +26,12 @@ Route::post('/argument/create', [ArgumentsController::class, 'store'])->name('ar
 
 
 // Put - Arguments
-// Route::put('/argument/{argument}', [ArgumentsController::class, 'update'])->name('arguments.update');
+Route::put('/argument/{argument}', [ArgumentsController::class, 'update'])->name('arguments.update');
 
 
 
 // Delete - Arguments
-// Route::delete('/argument/{argument}/destroy', [ArgumentsController::class, 'destroy'])->name('arguments.destroy');
+Route::delete('/argument/{argument}/destroy', [ArgumentsController::class, 'destroy'])->name('arguments.destroy');
 
 
 
