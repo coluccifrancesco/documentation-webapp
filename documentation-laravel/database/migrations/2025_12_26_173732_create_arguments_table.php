@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->text('resume');
             $table->text('md_text')->nullable();
             $table->foreignId('difficulty_id')->nullable()->constrained();
-            $table->foreignId('technology_id')->nullable()->constrained();
+            // $table->foreignId('technology_id')->nullable()->constrained();
             $table->string('documentation_link');
             
             $table->timestamps();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Argument;
 use App\Models\Difficulty;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 
 class ArgumentsController extends Controller {
@@ -20,9 +21,10 @@ class ArgumentsController extends Controller {
         // get difficulties
         $difficulties = Difficulty::all();
 
-        // insert technologies
+        // get technologies
+        $technologies = Technology::all();
         
-        return view('arguments.create', compact('difficulties'));
+        return view('arguments.create', compact('difficulties', 'technologies'));
     }
 
     
@@ -36,17 +38,19 @@ class ArgumentsController extends Controller {
         $newArgument->resume = $data['resume'];
         $newArgument->md_text = $data['md_text'];
         $newArgument->difficulty_id = $data['difficulty_id'];
-        // insert storing technologies
+        // $newArgument->technology_id = $data['technology_id'];
         $newArgument->documentation_link = $data['documentation_link'];
+
+        // dd($data, $request->has('techs'));
 
         $newArgument->save();
 
         // After saving the project we can verify tags
-        // if($request->has('tags')) {
+        if($request->has('technology_id')) {
             
-        // if yes, save them
-        //     $newProject->tags()->attach($data['tags']);
-        // }
+            // if yes, save them
+            $newArgument->technologies()->attach($data['techs']);
+        }
 
         return redirect()->route('arguments.show', $newArgument);
     }
