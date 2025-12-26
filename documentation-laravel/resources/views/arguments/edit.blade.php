@@ -48,6 +48,25 @@
                     </select>
                 </div>
 
+                <div class="form-control my-3">
+                    <p class="mb-0">Technologies</p>
+                    
+                    <div class="row px-4 py-2">
+                        @foreach ($technologies as $tech)
+                            <div class="col-12 col-sm-6 col-lg-4 d-flex align-items-center justify-content-between border rounded p-2" style="background-color: {{ $tech->bg_color }}; color:{{ $tech->font_color }}">
+                                <label for="tech-{{ $tech->id }}">{{ $tech->name }}</label>
+                                <input 
+                                    type="checkbox" 
+                                    name="techs[]" 
+                                    value="{{ $tech->id }}" 
+                                    id="tech-{{ $tech->id }}" 
+                                    {{ $argument->technologies->contains($tech->id) ? 'checked' : '' }}
+                                >
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
                 <div class="form-control my-3 d-flex align-items-start flex-column">
                     <label for="documentation_link">Documentation link</label>
                     <input type="text" name="documentation_link" id="documentation_link" class="w-100" value="{{ $argument->documentation_link }}"></input>

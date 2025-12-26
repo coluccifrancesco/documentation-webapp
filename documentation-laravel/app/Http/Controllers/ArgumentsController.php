@@ -63,9 +63,9 @@ class ArgumentsController extends Controller {
     public function edit(Argument $argument){
 
         $difficulties = Difficulty::all();
-        // insert technologies
+        $technologies = Technology::all();
 
-        return view('arguments.edit', compact('argument', 'difficulties'));
+        return view('arguments.edit', compact('argument', 'difficulties', 'technologies'));
     }
 
     
@@ -78,22 +78,21 @@ class ArgumentsController extends Controller {
         $argument->resume = $data['resume'];
         $argument->md_text = $data['md_text'];
         $argument->difficulty_id = $data['difficulty_id'];
-        // insert technologies update
         $argument->documentation_link = $data['documentation_link'];
 
         $argument->update();
 
         // after the project update verify if we're receiving tags
-        // if($request->has('tags')) {
+        if($request->has('techs')) {
             
         // tags update
-        //     $project->tags()->sync($data['tags']);
+            $argument->technologies()->sync($data['techs']);
         
-        // } else {
+        } else {
             
-        // if there's no tags, we remove the ones originally attached
-        //     $project->tags()->detach();
-        // }
+        // if there's no technologies, we remove the ones originally attached
+            $argument->tags()->detach();
+        }
 
         return redirect()->route('arguments.show', $argument);
     }
@@ -108,7 +107,7 @@ class ArgumentsController extends Controller {
     // Remove the specified resource from storage
     public function destroy(Argument $argument){
 
-        // $project->tags()->detach();
+        $argument->technologies()->detach();
         $argument->delete();
 
         return redirect()->route('arguments.index');

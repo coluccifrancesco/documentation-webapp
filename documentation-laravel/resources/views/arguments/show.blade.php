@@ -15,7 +15,7 @@
                             <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
                         </a>
                                         
-                        <a href="">
+                        <a href="{{ route('arguments.sureOfDestroy', $argument->id) }}">
                             <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                         </a>
                                 
