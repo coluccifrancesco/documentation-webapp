@@ -30,7 +30,18 @@
             </div>
         </div>
 
-        <p class="w-75">{{ $argument->resume }}</p>
+        <div class="row">
+            <p class="col-12 col-sm-7">{{ $argument->resume }}</p>
+
+            <div class="col-12 col-sm-5 d-flex align-items-center justify-content-between">
+                @foreach ($argument->technologies as $tech)
+                    <div class="rounded py-2 px-3" style="background-color: {{ $tech->bg_color }}; color:{{ $tech->font_color }}">
+                        <p class="mb-0">{{ $tech->name }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
 
         <div class="d-flex justify-content-between align-items-center my-4">
             {{-- Difficulties showed by emojis and colors on a numerical scale --}}

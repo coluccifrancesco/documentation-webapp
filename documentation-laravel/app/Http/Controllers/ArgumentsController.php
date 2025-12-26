@@ -38,15 +38,12 @@ class ArgumentsController extends Controller {
         $newArgument->resume = $data['resume'];
         $newArgument->md_text = $data['md_text'];
         $newArgument->difficulty_id = $data['difficulty_id'];
-        // $newArgument->technology_id = $data['technology_id'];
         $newArgument->documentation_link = $data['documentation_link'];
-
-        // dd($data, $request->has('techs'));
 
         $newArgument->save();
 
         // After saving the project we can verify tags
-        if($request->has('technology_id')) {
+        if($request->has('techs')) {
             
             // if yes, save them
             $newArgument->technologies()->attach($data['techs']);
