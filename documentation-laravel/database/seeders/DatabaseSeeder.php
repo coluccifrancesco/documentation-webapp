@@ -23,8 +23,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            ArgumentsTableSeeder::class,
             DifficultiesTableSeeder::class,
+            TechnologiesSeeder::class,
+            ArgumentsTableSeeder::class
         ]);
     }
 }

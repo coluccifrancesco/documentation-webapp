@@ -66,7 +66,9 @@
             </a>
         </div>
         
-        <div id="md_text" class="rounded bg-dark text-white p-5">{{ $argument->md_text }}</div>
+        @if ($argument->md_text != '')
+            <div id="md_text" class="rounded bg-dark text-white p-5">{{ $argument->md_text }}</div>
+        @endif
 
     </div>
 

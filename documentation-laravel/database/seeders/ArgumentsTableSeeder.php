@@ -18,8 +18,9 @@ class ArgumentsTableSeeder extends Seeder {
     
             $newArgument->name = $faker->word();
             $newArgument->resume = $faker->paragraph(2);
-            $newArgument->md_text = $faker->paragraph(5);
+            $newArgument->md_text = '';
             $newArgument->difficulty_id = $faker->numberBetween(1, 3);
+            $newArgument->technology_id = $faker->numberBetween(1, 3);
             $newArgument->documentation_link = $faker->url();
     
             $newArgument->save();

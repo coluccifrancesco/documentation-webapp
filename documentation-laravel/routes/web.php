@@ -18,6 +18,8 @@ Route::get('/argument/{argument}', [ArgumentsController::class, 'show'])->name('
 
 Route::get('/argument/{argument}/edit', [ArgumentsController::class, 'edit'])->name('arguments.edit');
 
+Route::get('/argument/{argument}/areyousure', [ArgumentsController::class, 'sureOfDestroy'])->name('arguments.sureOfDestroy');
+
 
 
 // Post - Arguments

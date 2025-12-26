@@ -19,6 +19,8 @@ class ArgumentsController extends Controller {
 
         // get difficulties
         $difficulties = Difficulty::all();
+
+        // insert technologies
         
         return view('arguments.create', compact('difficulties'));
     }
@@ -34,9 +36,17 @@ class ArgumentsController extends Controller {
         $newArgument->resume = $data['resume'];
         $newArgument->md_text = $data['md_text'];
         $newArgument->difficulty_id = $data['difficulty_id'];
+        // insert storing technologies
         $newArgument->documentation_link = $data['documentation_link'];
 
         $newArgument->save();
+
+        // After saving the project we can verify tags
+        // if($request->has('tags')) {
+            
+        // if yes, save them
+        //     $newProject->tags()->attach($data['tags']);
+        // }
 
         return redirect()->route('arguments.show', $newArgument);
     }
@@ -52,6 +62,7 @@ class ArgumentsController extends Controller {
     public function edit(Argument $argument){
 
         $difficulties = Difficulty::all();
+        // insert technologies
 
         return view('arguments.edit', compact('argument', 'difficulties'));
     }
@@ -66,17 +77,37 @@ class ArgumentsController extends Controller {
         $argument->resume = $data['resume'];
         $argument->md_text = $data['md_text'];
         $argument->difficulty_id = $data['difficulty_id'];
+        // insert technologies update
         $argument->documentation_link = $data['documentation_link'];
 
         $argument->update();
 
+        // after the project update verify if we're receiving tags
+        // if($request->has('tags')) {
+            
+        // tags update
+        //     $project->tags()->sync($data['tags']);
+        
+        // } else {
+            
+        // if there's no tags, we remove the ones originally attached
+        //     $project->tags()->detach();
+        // }
+
         return redirect()->route('arguments.show', $argument);
+    }
+
+    // Asks if we're sure about deleting the project
+    public function sureOfDestroy(Argument $argument){
+
+        return view('arguments.destroy', data: compact('argument'));
     }
 
     
     // Remove the specified resource from storage
     public function destroy(Argument $argument){
 
+        // $project->tags()->detach();
         $argument->delete();
 
         return redirect()->route('arguments.index');
