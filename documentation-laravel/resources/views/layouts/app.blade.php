@@ -24,7 +24,8 @@
 <body>
     <div id="app">
 
-        <nav class="d-block d-md-none navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- If viewer is on less than bootstrap's "lg" toggles the navbar --}}
+        <nav class="d-block d-lg-none navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
 
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
@@ -46,7 +47,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
+                            <a class="nav-link" href="{{url('/') }}">{{ __('Arguments') }}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/technology') }}">{{ __('Technologies') }}</a>
                         </li>
                     </ul>
 
@@ -88,8 +93,8 @@
         </nav>
 
         <main class="row m-2">
-            {{-- If viewer is on more than bootstrap's "md" toggles the side navbar --}}
-            <section class="d-none d-md-block col-md-3 my-4">
+            {{-- If viewer is on more than bootstrap's "lg" toggles the side navbar --}}
+            <section class="d-none d-lg-block col-md-3 my-4">
 
                 {{-- Aggiustare l'estetica della navbar --}}
                 <nav class="border rounded p-3">
@@ -110,6 +115,10 @@
 
                         <li>
                             <a class="nav-link" href="{{ route('arguments.index') }}">Arguments</a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="{{ route('technologies.index') }}">Technologies</a>
                         </li>
 
                         <!-- Authentication Links -->
@@ -147,7 +156,7 @@
                 </nav>
             </section>
             
-            <section class="col-12 col-md-9">
+            <section class="col-12 col-lg-9">
                 @yield('content')
             </section>
         </main>
