@@ -121,7 +121,7 @@
                 <h1 class="mb-0" style="font-size: 4rem;">Error 404</h1>
                 <h5 class="text-secondary" style="font-size: 1.4rem;">The page does not exist</h5>
                 
-                <a href="{{ route('arguments.index') }}" class="mt-4">
+                <a href="{{ url('/') }}" class="mt-4">
                     <button class="btn btn-primary">Home Page <i class="fa-regular fa-house"></i></button>
                 </a>
             </div>
@@ -133,7 +133,7 @@
             <h1 class="mb-0" style="font-size: 4rem;">Error 404</h1>
             <h5 class="text-secondary" style="font-size: 1.4rem;">The page does not exist</h5>
                 
-            <a href="{{ route('arguments.index') }}" class="mt-4">
+            <a href="{{ url('/') }}" class="mt-4">
                 <button class="btn btn-primary">Home Page <i class="fa-regular fa-house"></i></button>
             </a>
         </div>

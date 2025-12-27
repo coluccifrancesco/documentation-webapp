@@ -11,7 +11,7 @@ Route::get('/', function () {
 
 
 // Get - Arguments 
-Route::get('/', [ArgumentsController::class, 'index'])->name('arguments.index');
+Route::get('/argument', [ArgumentsController::class, 'index'])->name('arguments.index');
 Route::get('/argument/create', [ArgumentsController::class, 'create'])->name('arguments.create');
 Route::get('/argument/{argument}', [ArgumentsController::class, 'show'])->name('arguments.show');
 Route::get('/argument/{argument}/edit', [ArgumentsController::class, 'edit'])->name('arguments.edit');

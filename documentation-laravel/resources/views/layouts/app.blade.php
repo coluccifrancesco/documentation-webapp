@@ -47,11 +47,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Arguments') }}</a>
+                            <a class="nav-link" href="{{ route('arguments.index') }}">{{ __('Arguments') }}</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/technology') }}">{{ __('Technologies') }}</a>
+                            <a class="nav-link" href="{{ route('technologies.index') }}">{{ __('Technologies') }}</a>
                         </li>
                     </ul>
 

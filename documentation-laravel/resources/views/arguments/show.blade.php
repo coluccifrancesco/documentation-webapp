@@ -24,7 +24,7 @@
 
                 <a href="{{ route('arguments.index') }}">
                     <button class="btn btn-primary">
-                        <i class="fa-regular fa-house"></i>
+                        Go back<i class="ms-1 fa-solid fa-arrow-left"></i>
                     </button>
                 </a>
             </div>
