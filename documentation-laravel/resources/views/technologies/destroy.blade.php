@@ -4,12 +4,46 @@
 
     @auth
         @if (Auth::user()->role === 'admin')
-            <h2>Sei l'admin</h2>
+
+            <div class="p-5 mx-auto my-5">
+
+                <h1>Are you sure you want to delete <span class="py-2 px-4 rounded mx-2" style="background-color: {{ $technology->bg_color }}; color:{{ $technology->font_color }}">{{ $technology->name }}</span>?</h1>                
+
+                <div class="d-flex justify-content-center align-items-center gap-3 mt-5">
+                    <a href="{{ route('technologies.index') }}">
+                        <button class="btn btn-primary">Home Page <i class="fa-regular fa-house"></i></button>
+                    </a>
+
+                    <form action="{{ route('technologies.destroy', $technology->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <input type="submit" class="btn btn-danger" value="Delete {{ $technology->name }}"></input>
+                    </form>
+                </div>
+            </div>
         @else
-            <h2>Non sei l'admin</h2>
+            <div class="d-flex justify-content-around align-items-center flex-column my-5">
+                <h1 class="mb-0" style="font-size: 4rem;">Error 404</h1>
+                <h5 class="text-secondary" style="font-size: 1.4rem;">The page does not exist</h5>
+
+                <a href="{{ route('arguments.index') }}" class="mt-4">
+                    <button class="btn btn-primary">Home Page <i class="fa-regular fa-house"></i></button>
+                </a>
+            </div>
         @endif
     @endauth
 
-    <h2>Lo vedi anche se sei un ospite</h2>
+    @guest
+        <div class="d-flex justify-content-around align-items-center flex-column my-5">
+            <h1 class="mb-0" style="font-size: 4rem;">Error 404</h1>
+            <h5 class="text-secondary" style="font-size: 1.4rem;">The page does not exist</h5>
+
+            <a href="{{ route('arguments.index') }}" class="mt-4">
+                <button class="btn btn-primary">Home Page <i class="fa-regular fa-house"></i></button>
+            </a>
+        </div>
+    @endguest
+
 
 @endsection

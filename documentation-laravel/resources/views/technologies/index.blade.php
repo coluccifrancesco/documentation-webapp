@@ -18,7 +18,7 @@
         <div class="row mt-3">
 
             @foreach ($technologies as $tech)
-                <div class="col-12 col-md-6 my-2">
+                <div class="col-12 col-md-6 col-xl-4 my-2">
                     <div class="rounded py-2 px-3 d-flex justify-content-between align-items-center" style="background-color: {{ $tech->bg_color }}; color:{{ $tech->font_color }}">
 
                         <p class="mb-0">{{ $tech->name }}</p>

@@ -36,4 +36,36 @@ class TechnologiesController extends Controller {
     public function show(Technology $technology){
         return view('technologies.show', compact('technology'));
     }
+
+    public function edit(Technology $technology){
+        return view('technologies.edit', compact('technology'));
+    }
+
+    public function update(Request $request, Technology $technology){
+        
+        $data = $request->all();
+
+        $technology->name = $data['name'];
+        $technology->resume = $data['resume'];
+        $technology->official_page_link = $data['official_page_link'];
+        $technology->bg_color = $data['bg_color'];
+        $technology->font_color = $data['font_color'];
+
+        $technology->update();
+
+        return redirect()->route('technologies.show', $technology);
+    }
+
+    public function sureOfDestroy(Technology $technology){
+        return view('technologies.destroy', data: compact('technology'));
+    }
+
+    
+    // Remove the specified resource from storage
+    public function destroy(Technology $technology){
+        
+        $technology->arguments()->detach();
+        $technology->delete();
+        return redirect()->route('technologies.index');
+    }
 }

@@ -2,14 +2,38 @@
 
 @section('content')
 
-    @auth
-        @if (Auth::user()->role === 'admin')
-            <h2>Sei l'admin</h2>
-        @else
-            <h2>Non sei l'admin</h2>
-        @endif
-    @endauth
+    <div class="container">
 
-    <h2>Lo vedi anche se sei un ospite</h2>
+        <div class="d-flex align-items-center justify-content-between mt-5 mb-2">
+            <div class="rounded px-4 py-2" style="background-color: {{ $technology->bg_color }}; color:{{ $technology->font_color }}">
+                <h1>{{ $technology->name }}</h1>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                @auth
+                    @if (Auth::user()->role === 'admin')
+
+                        <a href="{{ route('technologies.edit', $technology->id) }}">
+                            <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
+                        </a>
+
+                        <a href="{{ route('technologies.sureOfDestroy', $technology->id) }}">
+                            <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </a>
+
+                    @endif
+                @endauth
+
+                <a href="{{ route('arguments.index') }}">
+                    <button class="btn btn-primary">
+                        <i class="fa-regular fa-house"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+
+        <p class="col-12 col-sm-7">{{ $technology->resume }}</p>
+    </div>
 
 @endsection
