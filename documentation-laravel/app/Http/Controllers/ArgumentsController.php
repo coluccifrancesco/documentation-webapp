@@ -27,7 +27,6 @@ class ArgumentsController extends Controller {
         return view('arguments.create', compact('difficulties', 'technologies'));
     }
 
-    
     // Store a newly created resource in storage
     public function store(Request $request){
         
