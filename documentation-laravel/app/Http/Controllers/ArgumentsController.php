@@ -8,6 +8,7 @@ use App\Models\Technology;
 use Illuminate\Http\Request;
 
 class ArgumentsController extends Controller {
+
     
     public function index() {
 
