@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArgumentsController;
+use App\Http\Controllers\DifficultiesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TechnologiesController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,13 @@ Route::get('/technology/{technology}', [TechnologiesController::class, 'show'])-
 Route::get('/technology/{technology}/edit', [TechnologiesController::class, 'edit'])->name('technologies.edit');
 Route::get('/technology/{technology}/areyousure', [TechnologiesController::class, 'sureOfDestroy'])->name('technologies.sureOfDestroy');
 
+// Get - Difficulties 
+Route::get('/difficulty', [DifficultiesController::class, 'index'])->name('difficulties.index');
+Route::get('/difficulty/create', [DifficultiesController::class, 'create'])->name('difficulties.create');
+Route::get('/difficulty/{difficulty}', [DifficultiesController::class, 'show'])->name('difficulties.show');
+Route::get('/difficulty/{difficulty}/edit', [DifficultiesController::class, 'edit'])->name('difficulties.edit');
+Route::get('/difficulty/{difficulty}/areyousure', [DifficultiesController::class, 'sureOfDestroy'])->name('difficulties.sureOfDestroy');
+
 
 
 // Post - Arguments
@@ -31,6 +39,9 @@ Route::post('/argument/create', [ArgumentsController::class, 'store'])->name('ar
 
 // Post - Technologies
 Route::post('/technology/create', [TechnologiesController::class, 'store'])->name('technologies.store');
+
+// Post - Difficulties
+Route::post('/difficulty/create', [DifficultiesController::class, 'store'])->name('difficulties.store');
 
 
 
@@ -40,6 +51,9 @@ Route::put('/argument/{argument}', [ArgumentsController::class, 'update'])->name
 // Put - Technologies
 Route::put('/technology/{technology}', [TechnologiesController::class, 'update'])->name('technologies.update');
 
+// Put - Difficulties
+Route::put('/difficulty/{difficulty}', [DifficultiesController::class, 'update'])->name('difficulties.update');
+
 
 
 // Delete - Arguments
@@ -47,6 +61,9 @@ Route::delete('/argument/{argument}/destroy', [ArgumentsController::class, 'dest
 
 // Delete - Technologies
 Route::delete('/technology/{technology}/destroy', [TechnologiesController::class, 'destroy'])->name('technologies.destroy');
+
+// Delete - Difficulties
+Route::delete('/difficulty/{difficulty}/destroy', [DifficultiesController::class, 'destroy'])->name('difficulties.destroy');
 
 
 

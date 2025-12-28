@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Difficulty extends Model {
     
-    public function argument(){
+    public function arguments(){
 
         return $this->hasMany(Argument::class);
     }

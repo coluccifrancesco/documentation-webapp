@@ -15,19 +15,14 @@ class ArgumentsController extends Controller {
         return view('arguments.index', compact('arguments'));
     }
 
-    // Show the form for creating a new resource
     public function create()    {
 
-        // get difficulties
         $difficulties = Difficulty::all();
-
-        // get technologies
         $technologies = Technology::all();
         
         return view('arguments.create', compact('difficulties', 'technologies'));
     }
 
-    // Store a newly created resource in storage
     public function store(Request $request){
         
         $data = $request->all();
@@ -52,13 +47,11 @@ class ArgumentsController extends Controller {
     }
 
     
-    //  Show the specified resource
     public function show(Argument $argument){
         return view('arguments.show', compact('argument'));
     }
 
     
-    // Form for editing the specified resource
     public function edit(Argument $argument){
 
         $difficulties = Difficulty::all();
@@ -67,8 +60,6 @@ class ArgumentsController extends Controller {
         return view('arguments.edit', compact('argument', 'difficulties', 'technologies'));
     }
 
-    
-    // Update the specified resource in storage
     public function update(Request $request, Argument $argument){
         
         $data = $request->all();
@@ -96,14 +87,11 @@ class ArgumentsController extends Controller {
         return redirect()->route('arguments.show', $argument);
     }
 
-    // Asks if we're sure about deleting the project
     public function sureOfDestroy(Argument $argument){
 
         return view('arguments.destroy', data: compact('argument'));
     }
 
-    
-    // Remove the specified resource from storage
     public function destroy(Argument $argument){
 
         $argument->technologies()->detach();

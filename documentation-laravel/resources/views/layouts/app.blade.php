@@ -53,6 +53,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('technologies.index') }}">{{ __('Technologies') }}</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('difficulties.index') }}">{{ __('Difficulties') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -119,6 +123,10 @@
 
                         <li>
                             <a class="nav-link" href="{{ route('technologies.index') }}">Technologies</a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="{{ route('difficulties.index') }}">Difficulties</a>
                         </li>
 
                         <!-- Authentication Links -->

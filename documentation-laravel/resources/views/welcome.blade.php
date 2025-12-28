@@ -15,6 +15,12 @@
                     <button class="btn btn-primary p-4 mx-auto w-100"><h2 class="mb-0">Technologies</h2></button>
                 </a>
             </div>
+
+            <div class="col-12 col-md-6 my-4">
+                <a href="{{ route('difficulties.index') }}">
+                    <button class="btn btn-primary p-4 mx-auto w-100"><h2 class="mb-0">Difficulties</h2></button>
+                </a>
+            </div>
         </div>
     </div>
 
