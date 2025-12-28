@@ -81,7 +81,7 @@ class ArgumentsController extends Controller {
         } else {
             
         // if there's no technologies, we remove the ones originally attached
-            $argument->tags()->detach();
+            $argument->technologies()->detach();
         }
 
         return redirect()->route('arguments.show', $argument);

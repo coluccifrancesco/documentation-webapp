@@ -33,7 +33,12 @@
                         <div class="d-flex justify-content-between align-items-center my-3">
                             
                             {{-- Difficulties showed by emojis and colors on a numerical scale --}}
-                            @if ($argument->difficulty->grade_numerical == 1)
+                            @if ($argument->difficulty?->grade_numerical === null)
+                                <div class="border rounded bg-dark text-white p-2 d-flex gap-2 align-items-center justify-content-between">
+                                    <p class="mb-0">No diff</p>
+                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                </div>
+                            @elseif ($argument->difficulty->grade_numerical == 1)
                                 <div class="border rounded bg-success text-white p-2 d-flex gap-2 align-items-center justify-content-between">
                                     <p class="mb-0">{{ $argument->difficulty->grade_name }}</p>
                                     <i class="fa-solid fa-face-laugh-beam"></i>
@@ -57,6 +62,11 @@
                                 <div class="border rounded bg-danger text-white p-2 d-flex gap-2 align-items-center justify-content-between">
                                     <p class="mb-0">{{ $argument->difficulty->grade_name }}</p>
                                     <i class="fa-solid fa-face-dizzy"></i>
+                                </div>
+                            @elseif ($argument->difficulty->grade_numerical === null)
+                                <div class="border rounded bg-dark text-white p-2 d-flex gap-2 align-items-center justify-content-between">
+                                    <p class="mb-0">No diff</p>
+                                    <i class="fa-solid fa-circle-exclamation"></i>
                                 </div>
                             @endif
 

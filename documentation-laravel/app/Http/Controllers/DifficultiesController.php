@@ -56,6 +56,7 @@ class DifficultiesController extends Controller {
    
     public function destroy(Difficulty $difficulty){
 
+        $difficulty->arguments()->update(['difficulty_id' => null]);
         $difficulty->delete();
 
         return redirect()->route('difficulties.index');
