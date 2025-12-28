@@ -49,7 +49,7 @@
 
                 <div class="d-flex justify-content-between align-items-center mt-4">
                     <button class="btn btn-primary" type="button">
-                        <a href="{{ route('technologies.index') }}" class="text-white link-underline link-underline-opacity-0">Go back<i class="ms-2 fa-solid fa-arrow-left"></i></a>
+                        <a href="{{ route('technologies.show', $technology->id) }}" class="text-white link-underline link-underline-opacity-0">Go back<i class="ms-2 fa-solid fa-arrow-left"></i></a>
                     </button>
                     
                     <input type="submit" value="Save" class="btn btn-success">
