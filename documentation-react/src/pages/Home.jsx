@@ -1,11 +1,16 @@
 import ArgumentsList from '../components/ArgumentsList'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Home () {
 
     return <>
     
-    <h1>Home</h1>
+    <Header />
+    
     <ArgumentsList />
+    
+    <Footer />
     
     </>
 }
