@@ -23,11 +23,11 @@ function App() {
                     <Route element={<DefaultLayout />}>
                         <Route index element={<Home />} />
                         <Route path="/topics" element={<Topics />} />
-                        <Route path="/topics/:id" element={<SingleTopic />} />
+                        <Route path="/topics/:argumentId" element={<SingleTopic />} />
                         <Route path="/technologies" element={<Technologies />} />
-                        <Route path="/technologies/:id" element={<SingleTechnology />} />
+                        <Route path="/technologies/:technologyId" element={<SingleTechnology />} />
                         <Route path="/difficulties" element={<Difficulties />} />
-                        <Route path="/difficulties/:id" element={<SingleDifficulty />} />
+                        <Route path="/difficulties/:difficultyId" element={<SingleDifficulty />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
