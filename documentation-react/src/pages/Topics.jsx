@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import ArgumentsList from '../components/ArgumentsList';
 
 export default function Topics() {
-	const params = useParams();
-	const navigate = useNavigate();
+	
+    const navigate = useNavigate();
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
@@ -12,5 +13,6 @@ export default function Topics() {
 
 	return <>
 		<h1>Topics</h1>
+        <ArgumentsList />
 	</>;
 }

@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 export default function Header () {
 
-    return <header className="w-100 py-2 px-4 d-flex align-items-center justify-content-between bg-dark text-white">
+    return <header className="w-100 py-2 px-4 d-flex align-items-center justify-content-start bg-dark text-white">
     
         <div className="d-flex align-items-center gap-4">
             <Link to="/"><h1 className='text-white'>DocuHub</h1></Link>
@@ -22,7 +22,5 @@ export default function Header () {
             </ul>
         </div>
 
-        <div></div>
-    
     </header>
 }

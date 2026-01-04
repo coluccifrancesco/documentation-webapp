@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Difficulties() {
-	const params = useParams();
+    
 	const navigate = useNavigate();
 	const [data, setData] = useState(null);
 

@@ -1,10 +1,8 @@
-import ArgumentsList from '../components/ArgumentsList'
-
 export default function Home () {
 
     return <>
     
-    <ArgumentsList />
+        <h1>Home</h1>
     
     </>
 }

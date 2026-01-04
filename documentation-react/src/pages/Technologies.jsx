@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Technologies() {
-	const params = useParams();
-	const navigate = useNavigate();
+	
+    const navigate = useNavigate();
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
