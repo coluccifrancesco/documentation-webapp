@@ -4,7 +4,7 @@ export default function Header() {
 
     return <>
 
-        <header className="d-flex d-lg-none w-100 py-2 px-4 align-items-center justify-content-between bg-dark text-white">
+        <header className="d-flex d-lg-none col-12 py-2 px-4 align-items-center justify-content-between bg-dark text-white">
 
             <nav className="d-flex align-items-center gap-4">
                 <Link to="/"><h1 className='text-white'>DocuHub</h1></Link>
