@@ -11,7 +11,7 @@ export default function ArgumentsList() {
         queryKey: ['arguments'],
         queryFn: getArguments
     });
-    
+     
     // 1. Handle loading state
     if (isLoading) return <p>Loading data</p>;
 
