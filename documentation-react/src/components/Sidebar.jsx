@@ -2,11 +2,11 @@ import { Link, NavLink } from 'react-router-dom';
 
 export default function Header () {
 
-    return <div className="d-none d-lg-block col-lg-3 py-2 px-4">
+    return <div className="d-none d-lg-block col-lg-3 p-2 ps-4 pe-2">
     
         <div className="sidebar">
             <ul className="list-unstyled p-4">
-                <li className=''>
+                <li className='sidebar-link px-2 py-1'>
                     <Link to="/"><h1 className='text-color-500'>DocuHub</h1></Link>
                 </li>
 

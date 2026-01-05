@@ -64,20 +64,21 @@ a {
     border-radius: 15px;
 }
 
-
 .sidebar-link{
     
     border-radius: 15px;
 
     &:hover {
-    cursor: pointer;
-    transition: 0.5s;
-    background-color: var(--color-500);
-    box-shadow: rgba(0, 0, 0, 0.24) -5px 3px 8px;
-    
-    h5{
-        color: var(--color-50);
-    }
+        cursor: pointer;
+        background-color: var(--color-500);
+        box-shadow: rgba(0, 0, 0, 0.24) -5px 3px 8px;
+        transition: 0.3s;
+
+        h5, h1{
+            color: var(--color-50);
+            margin-left: 20px;
+            transition: 0.25s ease-in-out;
+        }
     }
 
     &:active{
