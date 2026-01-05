@@ -58,3 +58,29 @@ a {
 .text-color-800 { color: var(--color-800); }
 .text-color-900 { color: var(--color-900); }
 .text-color-950 { color: var(--color-950); }
+
+.sidebar {
+    border: var(--color-500) 5px solid;
+    border-radius: 15px;
+}
+
+
+.sidebar-link{
+    
+    border-radius: 15px;
+
+    &:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: var(--color-500);
+    box-shadow: rgba(0, 0, 0, 0.24) -5px 3px 8px;
+    
+    h5{
+        color: var(--color-50);
+    }
+    }
+
+    &:active{
+        box-shadow: none;
+    }
+}
