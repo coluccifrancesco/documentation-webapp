@@ -1,7 +1,15 @@
 :root {
-    --main-color: ;
-    --secondary-color: :
-    
+    --color-50: #f3f8fc;
+    --color-100: #e6f0f8;
+    --color-200: #c8e1ef;
+    --color-300: #97c7e2;
+    --color-400: #60aad0;
+    --color-500: #3c8fbb;
+    --color-600: #2b739e;
+    --color-700: #245c80;
+    --color-800: #22506d;
+    --color-900: #20435a;
+    --color-950: #162b3b;
 }
 
 * {
