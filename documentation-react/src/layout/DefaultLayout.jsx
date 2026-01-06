@@ -10,9 +10,14 @@ export default function DefaultLayout () {
     
         <div className="row">
             
-            <Sidebar />
-            <TabletHeader />
-            <MobileHeader />
+            <div className="d-none d-lg-block col-lg-3">
+                <Sidebar />
+            </div>
+
+            <div className="d-lg-none col-12">
+                <TabletHeader />
+                <MobileHeader />
+            </div>
             
             <div className="col-12 col-lg-9">
                 <Outlet />

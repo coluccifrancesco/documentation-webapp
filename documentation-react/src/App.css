@@ -125,35 +125,47 @@ a {
     display: inline-block;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.075);
     border-radius: 100px;
+    background: linear-gradient(37deg, var(--color-500) 0%, var(--color-800) 100%);
     
     h1, p {
         transition: 0.2s ease-in-out;
-        color: var(--color-500);
-        padding: 3px 10px;
-        border-radius: 20px;
+        color: var(--color-100);
         cursor: pointer;
     }
 
     p {
         font-family: monospace;
         font-size: 1rem;
+        padding: 3px 10px;
+        border-radius: 20px;
     }
 
     h1:hover {
-        color: var(--color-700);
+        color: var(--color-50);
+        transform: scale(1.05);
     } 
     
     p:hover {
         background-color: var(--color-200);
         color: var(--color-600);
-        font-size: 1.1rem;
+        transform: scale(1.15);
     }
 }
 
-.mobile-header {
+.mobile-header-nav {
+    width: 95%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.075);
+    border-radius: 100px;
+    background: linear-gradient(37deg, var(--color-500) 0%, var(--color-800) 100%);
     
-    h1, p {
-        color: var(--color-400);
+    h1 {
+        color: var(--color-100);
+        transition: 0.2s ease-in-out;
+        
+        &:hover {
+            color: var(--color-50);
+            transform: scale(1.05);
+        } 
     }
 }
 
