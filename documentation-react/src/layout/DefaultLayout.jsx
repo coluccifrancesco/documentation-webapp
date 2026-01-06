@@ -5,18 +5,21 @@ import Footer from "../components/Footer";
 
 export default function DefaultLayout () {
 
-    return <div className="row">
-        
-        <Sidebar />
-
-        <Header />
-        
-        <div className="col-12 col-lg-9">
-            <Outlet />
+    return (
+    
+        <div className="row">
             
-            <Footer />
+            <Sidebar />
+
+            <Header />
+            
+            <div className="col-12 col-lg-9">
+                <Outlet />
+            </div>
+
+            <div className="col-12">
+                <Footer />
+            </div>
         </div>
-
-
-    </div>
+    )
 }
