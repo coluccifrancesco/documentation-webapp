@@ -4,7 +4,7 @@ export default function MobileHeader() {
 
     return <>
 
-        <header className="d-flex d-sm-none py-2 px-5 align-items-center justify-content-between mobile-header mobile-header">
+        <header className="d-flex d-md-none py-2 px-5 align-items-center justify-content-between mobile-header mobile-header">
 
             <Link to="/"><h1>DocuHub</h1></Link>
 
