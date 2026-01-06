@@ -25,18 +25,15 @@ export default function ArgumentsList() {
         <ul className='list-unstyled row'>
             {data.map(argument => (
             
-                <li key={argument.id} className='col-12 col-md-6 my-3'>       
+                <li key={argument.id} className='col-12 col-md-6 col-xl-4 my-3'>       
                     
-                    <Link to={`/topics/${argument.id}`} className='p-3 argument-card d-flex justify-content-between align-items-center'>
+                    <Link to={`/topics/${argument.id}`} className='h-100 p-3 argument-card d-flex justify-content-between align-items-center'>
                         <div>
                             <h2 className='text-color-800'>{argument.name}</h2>
 
-                            <p className='text-color-700 mt-2 mb-1'>{argument.resume}</p>
+                            <p className='text-color-700 my-2'>{argument.resume}</p>
                             
-                            <div>
-                                <p className='text-color-500'>{argument.difficulty.grade_name}</p>
-                                {/* Inserisci la logica per il grade numerical con le faccine */}
-                            </div>
+                            {argument.difficulty.grade_name ? <DifficultyBanner grade_name={argument.difficulty.grade_name} grade_numerical={argument.difficulty.grade_numerical}/> : ''}
                         </div>
                     </Link>
                 
