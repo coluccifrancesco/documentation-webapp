@@ -24,6 +24,8 @@ export default function SingleTopic() {
     if (isLoading) return <p>Loading data</p>;
     if (isError) return <p>Error: {error.message}</p>;
 
+    // <DifficultyBanner grade_name={argument.difficulty.grade_name} grade_numerical={argument.difficulty.grade_numerical} />
+
     return <>
         <h1>{data?.name || ''}</h1>
     </>;

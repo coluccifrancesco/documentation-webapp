@@ -21,6 +21,8 @@ export default function SingleDifficulty() {
     if (isLoading) return <p>Loading data</p>;
     if (isError) return <p>Error: {error.message}</p>;
 
+    // <DifficultyBanner grade_name={argument.difficulty.grade_name} grade_numerical={argument.difficulty.grade_numerical} />
+
     console.log(data);
     return <>
         <h1>{data?.grade_name || ''}</h1>
