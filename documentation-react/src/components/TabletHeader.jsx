@@ -2,12 +2,14 @@ import { Link, NavLink } from 'react-router-dom';
 
 export default function TabletHeader() {
     
-    return <header className="d-none d-sm-flex d-lg-none py-2 px-5 align-items-center justify-content-between tablet-header">
+    return <header className="d-none d-sm-flex d-lg-none justify-content-center">
         
-        <nav className="d-flex align-items-center gap-4">
-            <Link to="/"><h1>DocuHub</h1></Link>
+        <nav className='tablet-header-nav my-3'>
+            <ul className="list-unstyled mx-auto d-flex justify-content-center align-items-center gap-4 px-5 py-2">
+                <li>
+                    <Link to="/"><h1>DocuHub</h1></Link>
+                </li>
 
-            <ul className="list-unstyled d-flex align-items-center gap-4">
                 <li>
                     <NavLink to="/topics"><p>Topics</p></NavLink>
                 </li>
