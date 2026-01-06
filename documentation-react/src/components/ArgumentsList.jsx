@@ -25,7 +25,7 @@ export default function ArgumentsList() {
         <ul className='list-unstyled row'>
             {data.map(argument => (
             
-                <li key={argument.id} className='col-12 col-md-6 col-xl-4 my-3'>       
+                <li key={argument.id} className='col-12 col-sm-6 col-xl-4 my-3'>       
                     
                     <Link to={`/topics/${argument.id}`} className='h-100 p-3 argument-card d-flex justify-content-between align-items-center'>
                         <div>
