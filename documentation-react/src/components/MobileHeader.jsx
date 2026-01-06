@@ -1,31 +1,17 @@
 import { Link, NavLink } from 'react-router-dom';
 
-export default function Header() {
+export default function MobileHeader() {
 
     return <>
 
-        <header className="d-flex d-lg-none w-100 py-2 px-4 align-items-center justify-content-between bg-dark text-white">
-            <nav className="d-flex align-items-center gap-4">
-                <Link to="/"><h1 className='text-white'>DocuHub</h1></Link>
+        <header className="d-flex d-sm-none py-2 px-5 align-items-center justify-content-between mobile-header mobile-header">
 
-                <ul className="d-none d-md-flex list-unstyled d-flex align-items-center gap-4">
-                    <li>
-                        <NavLink to="/topics"><p className='text-white'>Topics</p></NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink to="/technologies"><p className='text-white'>Technologies</p></NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink to="/difficulties"><p className='text-white'>Difficulties</p></NavLink>
-                    </li>
-                </ul>
-            </nav>
+            <Link to="/"><h1>DocuHub</h1></Link>
 
             <button class="text-white bg-white navbar-toggler d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
         </header>
 
         <div class="d-md-none collapse navbar-collapse" id="navbarNav">
@@ -43,6 +29,5 @@ export default function Header() {
                 </li>
             </ul>
         </div>
-
     </>
 }

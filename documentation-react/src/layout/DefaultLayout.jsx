@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
+import TabletHeader from "../components/TabletHeader";
+import MobileHeader from "../components/MobileHeader";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 
@@ -10,8 +11,8 @@ export default function DefaultLayout () {
         <div className="row">
             
             <Sidebar />
-
-            <Header />
+            <TabletHeader />
+            <MobileHeader />
             
             <div className="col-12 col-lg-9">
                 <Outlet />
