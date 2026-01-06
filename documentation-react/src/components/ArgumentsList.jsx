@@ -31,9 +31,15 @@ export default function ArgumentsList() {
                         <div>
                             <h2 className='text-color-800'>{argument.name}</h2>
 
-                            <p className='text-color-700 my-2'>{argument.resume}</p>
+                            <p className='text-color-700 mt-2 mb-4'>{argument.resume}</p>
                             
-                            {argument.difficulty.grade_name ? <DifficultyBanner grade_name={argument.difficulty.grade_name} grade_numerical={argument.difficulty.grade_numerical}/> : ''}
+                            {argument.difficulty.grade_name ? 
+                                
+                                <div className='d-flex justify-content-end'>
+                                    <DifficultyBanner grade_name={argument.difficulty.grade_name} grade_numerical={argument.difficulty.grade_numerical} />
+                                </div>
+                            
+                            : ''}
                         </div>
                     </Link>
                 
