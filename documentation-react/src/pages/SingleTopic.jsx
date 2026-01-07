@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import ReactMarkdown from 'react-markdown';
 import DifficultyBanner from '../components/DifficultyBanner';
+import CategoriesBanner from '../components/Footer';
 import GoBackBtn from '../components/GoBackBtn';
 import ScrollToTopBtn from '../components/ScrollToTopBtn';
 
@@ -49,7 +50,7 @@ export default function SingleTopic() {
 
                 <div>
                     <DifficultyBanner grade_name={data.difficulty.grade_name} grade_numerical={data.difficulty.grade_numerical} />
-                    {/* Categories banner */}
+                    {data.categories? <CategoriesBanner /> : ''}
                 </div>
             </div>
 

@@ -5,7 +5,14 @@ export default function GoBackBtn() {
     const navigate = useNavigate();
     
     const goBack = () => {
-        navigate(-1)
+        navigate(-1);
+
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth', 
+            })
+        })
     };
     
     return  <button onClick={goBack} className='go-back-btn'>

@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ArgumentsList from '../components/ArgumentsList';
+import ScrollToTopBtn from '../components/ScrollToTopBtn';
 
 export default function Topics() {
 
-    const navigate = useNavigate();
-
     useEffect(() => {
-        // placeholder for fetching or reacting to params
-    }, []);
+        
+    }, [])
 
     return <section className='container'>
 
@@ -18,7 +16,7 @@ export default function Topics() {
                 <i className="fa-solid fa-book-open"></i>
             </div>
 
-            <p className='w-75'> Here you will find the main theoretical and practical topics of programming. Understanding these topics allows you to read, write, and interpret code with greater awareness.</p>            
+            <p className='w-75'> Here you will find the main theoretical and practical topics of programming. Understanding these topics allows you to read, write, and interpret code with greater awareness.</p>
         </div>
 
         <ArgumentsList />

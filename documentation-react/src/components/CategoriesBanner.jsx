@@ -1,4 +1,4 @@
-export default function CategoriesBanner (props) {
+export default function DifficultyBanner (props) {
 
     // Prop structure:
     // <DifficultyBanner grade_name={argument.difficulty.grade_name} grade_numerical={argument.difficulty.grade_numerical} />
