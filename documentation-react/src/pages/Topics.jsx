@@ -5,7 +5,6 @@ import ArgumentsList from '../components/ArgumentsList';
 export default function Topics() {
 
     const navigate = useNavigate();
-    const [data, setData] = useState(null);
 
     useEffect(() => {
         // placeholder for fetching or reacting to params
@@ -19,9 +18,7 @@ export default function Topics() {
                 <i className="fa-solid fa-book-open"></i>
             </div>
 
-            {/* Searchbar e ordini vari (alfabetico, difficolta, argomento, ecc) */}
-            
-            <p className='w-75'> Here you will find the main theoretical and practical topics of programming. Understanding these topics allows you to read, write, and interpret code with greater awareness.</p>
+            <p className='w-75'> Here you will find the main theoretical and practical topics of programming. Understanding these topics allows you to read, write, and interpret code with greater awareness.</p>            
         </div>
 
         <ArgumentsList />
