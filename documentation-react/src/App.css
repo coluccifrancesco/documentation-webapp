@@ -322,6 +322,7 @@ a {
     background-color: var(--color-50);
     color: var(--color-500);
     padding: 5px 11px;
+    transition: 0.2s ease-in-out;
     
     input {
         background-color: inherit;
@@ -333,7 +334,6 @@ a {
         font-weight: light;
         font-style: normal;
         height: 100%;
-        width: 100%;
 
         &::placeholder {
             font-weight: lighter;
@@ -345,10 +345,12 @@ a {
         font-weight: bold;
         font-size: 1.5rem;
     }
+
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: -5px 5px 8px rgba(0, 0, 0, 0.144);
+    }
 }
 
-.filters-btn-and-list {
-    
-}
 
 /* Pages */

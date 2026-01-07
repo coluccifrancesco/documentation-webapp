@@ -7,6 +7,7 @@ import { useState } from 'react';
 export default function ArgumentsList() {
 
     const [searchBarValue, setSearchBarValue] = useState('');
+    const [sortBy, setSortBy] = useState('standard')
     
     // useQuery accepts an object with two properties:
     // 1. queryKey: identifies data in cache
@@ -24,16 +25,58 @@ export default function ArgumentsList() {
     if (isError) return <p>Error: {error.message}</p>;
     
     // 3. search bar logic data -> filteredTopics
-    const filteredTopics = data.filter(topic =>
+    let filteredTopics = data.filter(topic =>
         topic.name.toLowerCase().includes(searchBarValue.toLowerCase())
     );
+
+    // 4. filters logic 
+    if (sortBy === 'standard') {
+    
+        filteredTopics = filteredTopics.sort((a, b) => a.id - b.id)
+    
+    } else if (sortBy === 'alhpabeticalAZ') {
+    
+        filteredTopics = filteredTopics.sort((a, b) => a.name.localeCompare(b.name))
+    
+    } else if (sortBy === 'alhpabeticalZA') {
+    
+        filteredTopics = filteredTopics.sort((a, b) => b.name.localeCompare(a.name))
+    
+    } else if (sortBy === 'difficultyEasyToHard') {
+    
+        filteredTopics = filteredTopics.sort((a, b) => {
+            
+            // by increasing difficulty order data is sorted from A to Z
+            const differenceInDifficulty = a.difficulty.grade_numerical - b.difficulty.grade_numerical;
+
+            if (differenceInDifficulty === 0) {
+                return a.name.localeCompare(b.name)
+            }
+
+            return differenceInDifficulty
+        })
+    
+    } else if (sortBy === 'difficultyHardToEasy') {
+        
+        filteredTopics = filteredTopics.sort((a, b) => {
+            
+            // by increasing difficulty order data is sorted from Z to A
+            const differenceInDifficulty = b.difficulty.grade_numerical - a.difficulty.grade_numerical;
+
+            if (differenceInDifficulty === 0) {
+                return b.name.localeCompare(a.name)
+            }
+
+            return differenceInDifficulty
+        })
+    }
 
     // 4. topics are read
     return (<section className='pe-lg-4 ps-lg-0'>
 
         <div className='d-flex justify-content-between align-content-center my-4'>
             {/* Searchbar */}
-            <div className='search-bar d-flex align-items-center justify-content-between'>
+            <div className='search-bar d-flex align-items-center justify-content-center'>
                 <input 
                     type="text" 
                     value={searchBarValue} 
@@ -45,18 +88,18 @@ export default function ArgumentsList() {
             </div>
 
             {/* Filters */}
-            <div>
-                <div class="dropdown filters-btn-and-list">
-                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
-                    </button>
-    
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
+            <div className='d-flex justify-content-center align-content-center'>
+                <select 
+                    value={sortBy} 
+                    onChange={(e) => setSortBy(e.target.value)} 
+                    class="form-select filters-list"
+                >
+                    <option value="standard">Standard</option>
+                    <option value="alhpabeticalAZ">A to Z</option>
+                    <option value="alhpabeticalZA">Z to A</option>
+                    <option value="difficultyEasyToHard">Easier to Harder</option>
+                    <option value="difficultyHardToEasy">Harder to Easier</option>
+                </select>
             </div>
         </div>
 
