@@ -385,4 +385,32 @@ a {
     }
 }
 
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: 2px 5px;
+    border: 2px solid var(--color-600);
+    background-color: transparent;
+    color: var(--color-600);
+    transition: 0.2s ease-in-out;
+    margin: 10px;
+    
+    &:hover {
+        border: 2px solid transparent;
+        background-color: var(--color-600);
+        color: var(--color-100);
+        transition: 0.1s ease-in-out;
+    }
+
+    &:active {
+        border: 3px solid transparent;
+        background-color: transparent;
+        color: transparent;
+    }
+}
+
+
 /* Pages */

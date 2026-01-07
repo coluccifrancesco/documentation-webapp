@@ -7,6 +7,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import ReactMarkdown from 'react-markdown';
 import DifficultyBanner from '../components/DifficultyBanner';
 import GoBackBtn from '../components/GoBackBtn';
+import ScrollToTopBtn from '../components/ScrollToTopBtn';
 
 export default function SingleTopic() {
 
@@ -84,6 +85,8 @@ export default function SingleTopic() {
                 </ReactMarkdown> : ''}
             </div>
         </div>
+
+        <ScrollToTopBtn />
 
     </section>;
 }
