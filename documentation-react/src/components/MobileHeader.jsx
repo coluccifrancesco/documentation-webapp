@@ -20,7 +20,7 @@ export default function MobileHeader() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return <header className="d-flex d-md-none justify-content-center">
+    return <header className="d-flex d-md-none justify-content-center position-sticky">
         <nav className='mobile-header-nav my-3'>
             <ul className='list-unstyled d-flex justify-content-between align-items-center px-3 py-2'>
                 <li>
