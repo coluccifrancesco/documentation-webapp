@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import TechnologiesList from '../components/TechnologiesList';
 
 export default function Technologies() {
 
@@ -21,7 +22,7 @@ export default function Technologies() {
             <p className='w-75'>In this section you will find the main technologies used in software development: what they do, how they work, and the scenarios in which they are applied.</p>
         </div>
 
-        {/* <ArgumentsList /> */}
+        <TechnologiesList />
 
     </section>;
 }
