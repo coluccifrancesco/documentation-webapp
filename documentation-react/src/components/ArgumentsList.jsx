@@ -21,7 +21,7 @@ export default function ArgumentsList() {
     if (isError) return <p>Error: {error.message}</p>;
 
     // 3. data is read
-    return (<section className='pe-lg-4 px-4 px-lg-0'>
+    return (<section className='pe-lg-4 ps-lg-0'>
         <ul className='list-unstyled row'>
             {data.map(argument => (
             
