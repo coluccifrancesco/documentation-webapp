@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { getSingleArgument } from '../services/api';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import ReactMarkdown from 'react-markdown';
 import DifficultyBanner from '../components/DifficultyBanner';
+import GoBackBtn from '../components/GoBackBtn';
 
 export default function SingleTopic() {
 
     const { argumentId } = useParams();
-    const navigate = useNavigate();
 
     // useState is not necessary for argument data
     // TanStack Query already returns variable: 'data'
@@ -40,7 +40,7 @@ export default function SingleTopic() {
             <div className='d-flex justify-content-between align-items-center'>
                 <h1>{data?.name || ''}</h1>
                 
-                <button onClick={navigate(-1)}></button>
+                <GoBackBtn />
             </div>
 
             <div className='d-flex justify-content-between align-items-center my-3'>
