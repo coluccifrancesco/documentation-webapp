@@ -74,7 +74,7 @@ export default function ArgumentsList() {
     // 4. topics are read
     return (<section className='pe-lg-4 ps-lg-0'>
 
-        <div className='d-flex justify-content-between align-content-center my-4'>
+        <div className='d-flex justify-content-between align-content-center my-4 gap-5'>
             {/* Searchbar */}
             <div className='search-bar d-flex align-items-center justify-content-center'>
                 <input 
