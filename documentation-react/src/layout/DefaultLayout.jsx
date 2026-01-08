@@ -4,12 +4,12 @@ import MobileHeader from "../components/MobileHeader";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 
-export default function DefaultLayout () {
+export default function DefaultLayout() {
 
     return (
-    
-        <div className="row">
-            
+
+        <div className="row vh-percentage">
+
             <div className="d-none d-lg-block col-lg-3">
                 <Sidebar />
             </div>
@@ -18,14 +18,13 @@ export default function DefaultLayout () {
                 <TabletHeader />
                 <MobileHeader />
             </div>
-            
-            <div className="col-12 col-lg-9">
-                <Outlet />
-            </div>
 
-            <div className="col-12">
+            <div className="col-12 col-lg-9 d-flex flex-column">
+                <Outlet />
                 <Footer />
             </div>
+
         </div>
+
     )
 }
