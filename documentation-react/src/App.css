@@ -412,5 +412,54 @@ a {
     }
 }
 
+.docs-btn {
+    background-color: var(--color-600);
+    border-radius: 15px;
+    border: 3px solid transparent;    
+    transition: 0.3s ease-in-out;
+    
+    p {
+        font-family: "Tektur", sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1rem;
+        color: var(--color-100);
+        padding: 5px;
+        transition: 0.3s ease-in-out;
+    }
+        
+    i {
+        color: var(--color-100);
+        font-size: 1.2rem;
+        padding: 6px 23px 5px 5px;
+        transition: 0.3s ease-in-out;
+    }
+
+    &:hover {
+        background-color: var(--color-100); 
+        border: 3px solid var(--color-600);           
+        
+        p {
+            color: var(--color-600);
+        }
+            
+        i {
+            color: var(--color-600);
+        }
+    }
+
+    &:active {
+        background-color: transparent; 
+        border: 3px solid transparent;           
+        
+        p {
+            color: transparent;
+        }
+            
+        i {
+            color: transparent;
+        }
+    }
+}
 
 /* Pages */

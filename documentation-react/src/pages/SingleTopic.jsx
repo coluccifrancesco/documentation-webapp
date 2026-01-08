@@ -8,6 +8,7 @@ import ReactMarkdown from 'react-markdown';
 import DifficultyBanner from '../components/DifficultyBanner';
 import TechnologyBanner from '../components/TechnologyBanner';
 import GoBackBtn from '../components/GoBackBtn';
+import DocsBtn from '../components/DocsBtn';
 import ScrollToTopBtn from '../components/ScrollToTopBtn';
 
 export default function SingleTopic() {
@@ -41,27 +42,31 @@ export default function SingleTopic() {
         <div className='my-lg-4 my-3 p-3 p-md-0 pe-lg-3'>
             <div className='d-flex justify-content-between align-items-center'>
                 <h1>{data?.name || ''}</h1>
-                
-                <GoBackBtn />
+
+                <GoBackBtn />                
             </div>
 
             <div className='d-flex justify-content-between align-items-center my-3'>
                 <p className='w-50'>{data?.resume || ''}</p>
 
-                <div className='d-md-flex justify-content-center align-items-center gap-4'>
-                    {data.technologies? <ul className='list-unstyled mb-3 mb-md-0'>
+                <div className='d-flex flex-column gap-3'>
+                    {data.documentation_link ? <DocsBtn documentation_link={data.documentation_link} /> : ''}
 
-                        {data.technologies.map(tech => (
-                            <li key={tech.id}>
-                                <Link to={`/technologies/${tech.id}`}>
-                                    <TechnologyBanner name={tech.name} bg_color={tech.bg_color} font_color={tech.font_color} />
-                                </Link>
-                            </li>
-                        ))}
+                    <div className='d-md-flex justify-content-center align-items-center gap-4'>
+                        {data.technologies? <ul className='list-unstyled mb-3 mb-md-0'>
 
-                    </ul> : ''}
-                    
-                    <DifficultyBanner grade_name={data.difficulty.grade_name} grade_numerical={data.difficulty.grade_numerical} />
+                            {data.technologies.map(tech => (
+                                <li key={tech.id}>
+                                    <Link to={`/technologies/${tech.id}`}>
+                                        <TechnologyBanner name={tech.name} bg_color={tech.bg_color} font_color={tech.font_color} />
+                                    </Link>
+                                </li>
+                            ))}
+
+                        </ul> : ''}
+                        
+                        <DifficultyBanner grade_name={data.difficulty.grade_name} grade_numerical={data.difficulty.grade_numerical} />
+                    </div>
                 </div>
             </div>
 
