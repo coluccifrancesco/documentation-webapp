@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 export default function Header () {
 
-    return <section className="sidebar h-100">
+    return <section className="sidebar">
            
         <ul className="list-unstyled p-4">
             <li className='sidebar-link px-2 py-1'>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DifficultiesList from '../components/DifficultiesList';
 
 export default function Difficulties() {
 
@@ -23,7 +24,7 @@ export default function Difficulties() {
             <p className='w-75'>This section lists each difficulty category and provides access to the related topics. The goal is to master the fundamentals first, and then move on to more complex concepts.</p>
         </div>
 
-        {/* <ArgumentsList /> */}
+        <DifficultiesList />
 
     </section>;
 }

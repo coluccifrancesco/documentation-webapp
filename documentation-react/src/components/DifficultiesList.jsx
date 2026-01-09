@@ -25,8 +25,8 @@ export default function ArgumentsList() {
     if (isError) return <p>Error: {error.message}</p>;
     
     // 3. search bar logic data -> filteredDifficulties
-    let filteredDifficulties = data.filter(tech =>
-        tech.name.toLowerCase().includes(searchBarValue.toLowerCase())
+    let filteredDifficulties = data.filter(difficulty =>
+        difficulty.grade_name.toLowerCase().includes(searchBarValue.toLowerCase())
     );
 
     // 4. filters logic 
@@ -36,11 +36,38 @@ export default function ArgumentsList() {
     
     } else if (sortBy === 'alhpabeticalAZ') {
     
-        filteredDifficulties = filteredDifficulties.sort((a, b) => a.name.localeCompare(b.name))
+        filteredDifficulties = filteredDifficulties.sort((a, b) => a.grade_name.localeCompare(b.grade_name))
     
     } else if (sortBy === 'alhpabeticalZA') {
     
-        filteredDifficulties = filteredDifficulties.sort((a, b) => b.name.localeCompare(a.name))
+        filteredDifficulties = filteredDifficulties.sort((a, b) => b.grade_name.localeCompare(a.grade_name))
+    } else if (sortBy === 'difficultyEasyToHard') {
+    
+        filteredDifficulties = filteredDifficulties.sort((a, b) => {
+            
+            // by increasing difficulty order data is sorted from A to Z
+            const differenceInDifficulty = a.grade_numerical - b.grade_numerical;
+
+            if (differenceInDifficulty === 0) {
+                return a.grade_name.localeCompare(b.grade_name)
+            }
+
+            return differenceInDifficulty
+        })
+    
+    } else if (sortBy === 'difficultyHardToEasy') {
+        
+        filteredDifficulties = filteredDifficulties.sort((a, b) => {
+            
+            // by increasing difficulty order data is sorted from Z to A
+            const differenceInDifficulty = b.grade_numerical - a.grade_numerical;
+
+            if (differenceInDifficulty === 0) {
+                return b.grade_name.localeCompare(a.grade_name)
+            }
+
+            return differenceInDifficulty
+        })
     }
 
     // 5. difficulties are read
@@ -53,7 +80,7 @@ export default function ArgumentsList() {
                     type="text" 
                     value={searchBarValue} 
                     onChange={(e) => setSearchBarValue(e.target.value)} 
-                    placeholder='Looking for a technology...' 
+                    placeholder='Looking for a difficulty...' 
                     className='ms-1'
                 />
                 <i class=" ms-2 fa-solid fa-magnifying-glass"></i>
@@ -69,11 +96,13 @@ export default function ArgumentsList() {
                     <option value="standard">Standard</option>
                     <option value="alhpabeticalAZ">A to Z</option>
                     <option value="alhpabeticalZA">Z to A</option>
+                    <option value="difficultyEasyToHard">Easier to Harder</option>
+                    <option value="difficultyHardToEasy">Harder to Easier</option>
                 </select>
             </div>
         </div>
 
-        <ul className='list-unstyled row mt-5'>
+        <ul className='list-unstyled row mt-4'>
             {filteredDifficulties.map(diff => (
             
                 <li key={diff.id} className='col-12 col-md-6 col-xl-4 my-2'>       

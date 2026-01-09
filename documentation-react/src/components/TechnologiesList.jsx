@@ -47,7 +47,7 @@ export default function ArgumentsList() {
     // 5. technologies are read
     return (<section className='pe-lg-4 ps-lg-0'>
 
-        <div className='d-flex justify-content-between align-content-center my-4 gap-5'>
+        <div className='d-flex justify-content-between align-content-center gap-5 my-4'>
             {/* Searchbar */}
             <div className='search-bar d-flex align-items-center justify-content-center'>
                 <input 
@@ -74,7 +74,7 @@ export default function ArgumentsList() {
             </div>
         </div>
 
-        <ul className='list-unstyled row mt-5'>
+        <ul className='list-unstyled row mt-4'>
             {filteredTechnologies.map(tech => (
             
                 <li key={tech.id} className='col-12 col-md-6 col-xl-4 my-2'>       
