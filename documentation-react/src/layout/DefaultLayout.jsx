@@ -8,6 +8,8 @@ export default function DefaultLayout() {
 
     return (
 
+        // tieni ferma sidebar quando scorri
+
         <div className="row vh-percentage">
 
             <div className="d-none d-lg-block col-lg-3">

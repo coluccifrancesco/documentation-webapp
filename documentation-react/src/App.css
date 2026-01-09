@@ -206,7 +206,7 @@ a {
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9.4px);
-    -webkit-backdrop-filter: blur(9.4px);
+    -webkit-backdrop-filter: blur(9.4px); 
 }
 
 .offcanvas-elements{
@@ -257,7 +257,6 @@ a {
 /* Single elements */
 .argument-card {
     position: relative;
-    /* border: 1px solid var(--color-50); */
     border-radius: 15px;
     transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     
@@ -298,6 +297,7 @@ a {
 }
 
 .difficulty-banner {
+    
     p {
         font-family: "Tektur", sans-serif;
         font-optical-sizing: auto;
