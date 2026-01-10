@@ -8,7 +8,7 @@ export default function Topics() {
         
     }, [])
 
-    return <section className='container px-lg-5 px-xl-0'>
+    return <section className='container px-lg-5'>
 
         <div className='my-4 p-3 p-md-0 page-head'>
             <div className='mb-2 d-flex align-items-center justify-content-start gap-4'>

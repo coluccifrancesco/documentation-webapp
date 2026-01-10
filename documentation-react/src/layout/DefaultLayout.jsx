@@ -6,20 +6,21 @@ import Footer from "../components/Footer";
 
 export default function DefaultLayout() {
     return (
-        <div className="row vh-percentage">
+        <div className="row h-100">
             <div className="d-none d-lg-block col-lg-3">
                 <Sidebar />
             </div>
 
-            <div className="d-lg-none col-12">
+            <div className="d-lg-none col-12 align-self-start">
                 <TabletHeader />
                 <MobileHeader />
             </div>
 
-            <div className="col-12 col-lg-9 d-flex flex-column main-content-wrapper">
+            <div className="col-12 col-lg-9 main-content-wrapper d-flex flex-column justify-content-between vh-percentage">    
                 <Outlet />
-                <Footer />
+                <Footer />    
             </div>
+
         </div>
     )
 }

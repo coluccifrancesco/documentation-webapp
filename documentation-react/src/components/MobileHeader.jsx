@@ -69,6 +69,9 @@ export default function MobileHeader() {
                         <li>
                             <NavLink to="/difficulties"><p className="nav-link">Difficulties</p></NavLink>
                         </li>
+                        <li>
+                            <NavLink to="http://127.0.0.1:8000/login"><p className="nav-link">Login</p></NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>

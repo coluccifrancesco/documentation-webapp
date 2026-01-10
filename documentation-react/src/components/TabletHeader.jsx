@@ -25,6 +25,10 @@ export default function TabletHeader() {
                 <li>
                     <NavLink to="/difficulties"><p>Difficulties</p></NavLink>
                 </li>
+
+                <li>
+                    <NavLink to='http://127.0.0.1:8000/login'><p>Login</p></NavLink>
+                </li>
             </ul>
         </nav>
 

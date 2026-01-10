@@ -30,11 +30,7 @@ html {
 
 body{
     background: linear-gradient(180deg, var(--color-100) 20%, var(--color-200) 100%);
-    min-height: 100%;
-}
-
-.vh-percentage {
-    min-height: 100vh;
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, ul, nav, p, a, li {
@@ -87,9 +83,14 @@ a {
     box-shadow: 7px 0px 7px -2px rgba(0, 0, 0, 0.206);
     min-height: 98vh;
     border-radius: 15px;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    margin-left: 1vh;
+    position: fixed;
+    top: 1rem;        
+    left: 1rem;       
+    bottom: 1rem;     
+    width: calc(25% - 1.5rem);  
+    height: auto;     
+    min-height: calc(98vh - 2rem);
+    overflow-y: auto;
 }
 
 .sidebar-link {  
@@ -494,6 +495,10 @@ a {
     }
 }
 
+footer {
+    align-content: baseline;
+}
+
 .footer-links {
 
     div {
@@ -523,6 +528,45 @@ a {
 
 
 /* Media Queries */
+@media (min-width: 992px) {
+    
+    .main-content-wrapper {
+        margin-left: calc(25% + 0.5rem);  /* Compensa la nuova posizione */
+        overflow-y: auto;
+    }
+
+    .vh-percentage {
+        min-height: 100vh;
+    }
+}
+
+@media (min-width: 1199px) {
+    .sidebar-link h1 {
+        font-size: 2.3rem;
+        margin-left: 1px;
+    }
+    
+    .sidebar-link h5 {
+        font-size: 1.9rem;
+        margin-left: 1px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .tablet-header-nav{
+        max-height: 10vh;
+    }
+
+    .mobile-header-nav{
+        max-height: 10vh;
+    }
+
+    .vh-percentage {
+        min-height: 89vh;
+    }
+}
+
 @media (max-width: 1199px) {
     .sidebar-link h1 {
         font-size: 1.9rem;

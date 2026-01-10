@@ -70,37 +70,39 @@ export default function SingleTopic() {
                 </div>
             </div>
 
-            <div className='react-markdown p-4 mt-5 mt-md-5'>
-                {data.md_text ? <ReactMarkdown
-                    components={{
-                        code({ node, inline, className, children, ...props }) {
-                            const match = /language-(\w+)/.exec(className || '');
-                            return !inline && match ? (
-                                <SyntaxHighlighter
-                                    style={vscDarkPlus}
-                                    language={match[1]}
-                                    PreTag="div"
-                                    wrapLongLines={false}
-                                    customStyle={{
-                                        borderRadius: '15px',
-                                        textAlign: 'start',
-                                        margin: '1rem 0',
-                                        whiteSpace: 'pre'
-                                    }}
-                                >
-                                    {String(children).replace(/\n$/, '')}
-                                </SyntaxHighlighter>
-                            ) : (
-                                <code className={className} {...props}>
-                                    {children}
-                                </code>
-                            );
-                        }
-                    }}
-                >
-                    {markdownContent}
-                </ReactMarkdown> : ''}
-            </div>
+            {data.md_text !== null ?
+                <div className='react-markdown p-4 mt-5 mt-md-5'>
+                    <ReactMarkdown
+                        components={{
+                            code({ node, inline, className, children, ...props }) {
+                                const match = /language-(\w+)/.exec(className || '');
+                                return !inline && match ? (
+                                    <SyntaxHighlighter
+                                        style={vscDarkPlus}
+                                        language={match[1]}
+                                        PreTag="div"
+                                        wrapLongLines={false}
+                                        customStyle={{
+                                            borderRadius: '15px',
+                                            textAlign: 'start',
+                                            margin: '1rem 0',
+                                            whiteSpace: 'pre'
+                                        }}
+                                    >
+                                        {String(children).replace(/\n$/, '')}
+                                    </SyntaxHighlighter>
+                                ) : (
+                                    <code className={className} {...props}>
+                                        {children}
+                                    </code>
+                                );
+                            }
+                        }}
+                    >
+                        {markdownContent}
+                    </ReactMarkdown> 
+                </div>
+            : ''}
         </div>
 
         <ScrollToTopBtn />
