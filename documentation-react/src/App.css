@@ -490,6 +490,32 @@ a {
     }
 }
 
+.footer-links {
+
+    div {
+        background-color: var(--color-800);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 20px;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: var(--color-50);
+
+            & i {
+                color: var(--color-800);
+            }
+        }
+        
+        i {
+            font-size: 2.4rem;
+            background-color: transparent;
+            color: var(--color-50);
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
 
 
 /* Media Queries */
