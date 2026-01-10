@@ -2,9 +2,9 @@ import { Link } from "react-router-dom"
 
 export default function Footer() {
 
-    return <footer className="mt-5 ">
+    return <footer className="mt-5 w-50 mx-auto">
 
-        <section className="p-3 row footer-links">
+        <section className="row footer-links">
             <Link to='https://www.linkedin.com/in/francesco-colucci-589414290/' className="col-12 col-sm-4 my-2 my-sm-0">
                 <div className="text-center">
                     <i class="fa-brands fa-github"></i>

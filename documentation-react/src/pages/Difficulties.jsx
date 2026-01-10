@@ -13,7 +13,7 @@ export default function Difficulties() {
 
     // <DifficultyBanner grade_name={argument.difficulty.grade_name} grade_numerical={argument.difficulty.grade_numerical} />
 
-    return <section className='container mt-4'>
+    return <section className='container my-lg-4'>
 
         <div className='my-4 p-3 p-md-0 page-head'>
             <div className='mb-2 d-flex align-items-center justify-content-start gap-4'>

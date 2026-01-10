@@ -53,7 +53,7 @@ export default function SingleTopic() {
                     {data.documentation_link ? <DocsBtn documentation_link={data.documentation_link} /> : ''}
 
                     <div className='d-md-flex justify-content-center align-items-center gap-4'>
-                        {data.technologies? <ul className='list-unstyled mb-3 mb-md-0'>
+                        {data.technologies? <ul className='list-unstyled mb-3 mb-md-0 d-flex align-items-center justify-content-around gap-1'>
 
                             {data.technologies.map(tech => (
                                 <li key={tech.id}>
