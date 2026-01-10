@@ -1,12 +1,17 @@
 import { Link, NavLink } from 'react-router-dom';
+import Logo from './Logo';
 
-export default function Header () {
+export default function Header() {
 
-    return <section className="sidebar">
-           
-        <ul className="list-unstyled p-4">
-            <li className='sidebar-link px-2 py-1'>
-                <Link to="/"><h1>DocuHub</h1></Link>
+    return <section className="sidebar p-2">
+
+        <ul className="list-unstyled mt-3">
+            <li className='sidebar-link'>
+                <Link to='./' className='py-1 px-2 d-flex justify-content-start align-items-center'>
+                    <Logo />
+
+                    <h1>DocuHub</h1>
+                </Link>
             </li>
 
             <li className='sidebar-link px-3 py-2 my-2'>

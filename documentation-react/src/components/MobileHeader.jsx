@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
+import Logo from './Logo';
 
 export default function MobileHeader() {
 
@@ -21,8 +22,10 @@ export default function MobileHeader() {
             <header className="d-flex d-md-none justify-content-center">
                 <nav className="mobile-header-nav my-3">
                     <ul className="list-unstyled d-flex justify-content-between align-items-center px-3 py-2">
-                        <li>
-                            <Link to="/"><h1>DocuHub</h1></Link>
+                        <li className='d-flex justify-content-center align-items-center'>
+                            <Link to='./'>
+                                <Logo />
+                            </Link>
                         </li>
 
                         <li>

@@ -5,13 +5,8 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 
 export default function DefaultLayout() {
-
     return (
-
-        // tieni ferma sidebar quando scorri
-
         <div className="row vh-percentage">
-
             <div className="d-none d-lg-block col-lg-3">
                 <Sidebar />
             </div>
@@ -21,12 +16,10 @@ export default function DefaultLayout() {
                 <MobileHeader />
             </div>
 
-            <div className="col-12 col-lg-9 d-flex flex-column">
+            <div className="col-12 col-lg-9 d-flex flex-column main-content-wrapper">
                 <Outlet />
                 <Footer />
             </div>
-
         </div>
-
     )
 }
