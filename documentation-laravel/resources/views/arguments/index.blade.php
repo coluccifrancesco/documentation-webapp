@@ -7,8 +7,15 @@
             <h2 class="mb-0">Argument's list</h2>
 
             @auth
+                {{-- Example of previous used alternative that authorized only "admin" 
+                users to access every data-managing page or element 
+                
+                @if(Auth::user()->role === "admin")
+                    ...
+                @endif --}}
+
                 <a href="{{ route('arguments.create') }}" class="">
-                    <button class="btn btn-success">Create new argument</button>
+                        <button class="btn btn-success">Create new argument</button>
                 </a>
             @endauth
         </div>

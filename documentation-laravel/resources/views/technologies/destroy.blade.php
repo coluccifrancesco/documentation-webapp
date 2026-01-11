@@ -4,7 +4,6 @@
 
     @auth
         <div class="p-5 mx-auto my-5">
-
             <h1>Are you sure you want to delete <span class="py-2 px-4 rounded mx-2" style="background-color: {{ $technology->bg_color }}; color:{{ $technology->font_color }}">{{ $technology->name }}</span>?</h1>                
 
             <div class="d-flex justify-content-center align-items-center gap-3 mt-5">
