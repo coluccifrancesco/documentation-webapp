@@ -7,9 +7,16 @@ export default function Technologies() {
     const navigate = useNavigate();
     const [data, setData] = useState(null);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    };
+
     useEffect(() => {
-        // placeholder for fetching or reacting to params
-    }, []);
+        scrollToTop()    
+    }, [])
 
     return <section className='container my-lg-4'>
 

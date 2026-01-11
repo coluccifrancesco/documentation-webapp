@@ -32,9 +32,16 @@ export default function SingleTechnology() {
         boxShadow: isHover ? 'rgba(0, 0, 0, 0.2) -5px 4px 3px' : `none`,
     };
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    };
+
     useEffect(() => {
-        // placeholder for fetching or reacting to params
-    }, []);
+        scrollToTop()    
+    }, [])
 
     if (isLoading) return <p>Loading data</p>;
     if (isError) return <p>Error: {error.message}</p>;

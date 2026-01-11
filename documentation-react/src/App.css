@@ -19,7 +19,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -528,17 +529,45 @@ footer {
 
 .hero{
     border-radius: 20px;
-    background-color: var(--color-200);
+    overflow-x: hidden;
 
-    h1 {
-        color: var(--color-900);
-        font-size: 3rem;
+    h1, h3 {
         font-family: Tektur;
         font-weight: bolder;
+        color: var(--color-900);
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2rem;
     }
     
     p {
         color: var(--color-800);
+    }
+
+    .last-three-topics {
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        
+        p {
+            color: var(--color-200);
+        }
+
+        &:hover {
+            background-color: var(--color-300);
+
+            h2 {
+                color: var(--color-900);
+            }
+
+            p {
+                color: var(--color-800);
+            }
+        }
     }
 
     .hero-img {
@@ -553,6 +582,20 @@ footer {
         .hero-img {
             width: 100%;
             height: 80%;
+        }
+    }
+}
+
+.hero-tech-icons{
+    
+    i {
+        font-size: 2.5rem;
+        color: var(--color-800);
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.3);
         }
     }
 }

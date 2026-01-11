@@ -7,9 +7,17 @@ export default function Difficulties() {
     const navigate = useNavigate();
     const [data, setData] = useState(null);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    };
+
     useEffect(() => {
-        // placeholder for fetching or reacting to params
-    }, []);
+        scrollToTop()    
+    }, [])
+
 
     // <DifficultyBanner grade_name={argument.difficulty.grade_name} grade_numerical={argument.difficulty.grade_numerical} />
 

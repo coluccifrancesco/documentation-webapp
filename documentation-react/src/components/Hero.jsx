@@ -2,7 +2,7 @@ export default function Hero() {
 
     return (
 
-        <section className="py-2 mb-4 hero container">
+        <section className="mb-4 hero container bg-color-200">
             <div className="container-fluid p-4 row">
 
                 <div className="col-12 col-lg-8">

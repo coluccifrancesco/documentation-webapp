@@ -16,7 +16,7 @@ export default function DefaultLayout() {
                 <MobileHeader />
             </div>
 
-            <div className="col-12 col-lg-9 main-content-wrapper d-flex flex-column justify-content-between vh-percentage">    
+            <div className="pe-lg-0 col-12 col-lg-9 main-content-wrapper d-flex flex-column justify-content-between vh-percentage">    
                 <Outlet />
                 <Footer />    
             </div>

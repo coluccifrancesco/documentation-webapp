@@ -4,8 +4,15 @@ import ScrollToTopBtn from '../components/ScrollToTopBtn';
 
 export default function Topics() {
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    };
+
     useEffect(() => {
-        
+        scrollToTop()    
     }, [])
 
     return <section className='container px-lg-5'>

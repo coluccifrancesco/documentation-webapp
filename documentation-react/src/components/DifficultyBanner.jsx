@@ -15,7 +15,7 @@ export default function DifficultyBanner (props) {
 
     return (
         <div className={`difficulty-banner d-flex justify-content-center align-items-center gap-2 py-2 px-3 rounded ${config?.bg_color} ${config?.font_color}`}>
-            <p>{props?.grade_name}</p>
+            {props.grade_name? <p>{props.grade_name}</p> : ''}
             <i className={config?.emojiClasses}></i>
         </div>
     )
