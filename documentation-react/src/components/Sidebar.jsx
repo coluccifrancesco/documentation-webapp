@@ -43,7 +43,7 @@ export default function Header() {
                 </li>
 
                 <li className="sidebar-link px-3 py-2 my-2">
-                    <Link to='http://127.0.0.1:8000/login'>
+                    <Link to='http://127.0.0.1:8000'>
                         <div className='d-flex align-items-center justify-content-start gap-3'>
                             <h5>Login</h5>
 

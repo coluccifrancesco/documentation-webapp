@@ -38,14 +38,6 @@ export default function LastAddedTopicsGrid() {
                                     <h2 className='text-color-100'>{topic.name}</h2>
 
                                     <p className='mt-2 mb-2'>{topic.resume}</p>
-                                    
-                                    {topic.difficulty.grade_name ? 
-                                        
-                                        <div className='d-flex justify-content-end'>
-                                            <DifficultyBanner grade_numerical={topic.difficulty.grade_numerical} />
-                                        </div>
-                                    
-                                    : ''}
                                 </div>
                             </Link>
                         </div>

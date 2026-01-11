@@ -82,27 +82,27 @@
                         </div>
 
                         @auth
-                        <div class="d-flex align-items-center justify-content-between mt-3">
-                            <a href="{{ route('arguments.edit', $argument->id) }}">
-                                <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
-                            </a>
+                            <div class="d-flex align-items-center justify-content-between mt-3">
+                                <a href="{{ route('arguments.edit', $argument->id) }}">
+                                    <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
+                                </a>
 
-                            <a href="{{ route('arguments.show', $argument->id) }}">
-                                <button class="btn btn-success">Show</button>
-                            </a>
+                                <a href="{{ route('arguments.show', $argument->id) }}">
+                                    <button class="btn btn-success">Show</button>
+                                </a>
 
-                            <a href="{{ route('arguments.sureOfDestroy', $argument->id) }}">
-                                <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                            </a>
-                        </div>
+                                <a href="{{ route('arguments.sureOfDestroy', $argument->id) }}">
+                                    <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                </a>
+                            </div>
                         @endauth
 
                         @guest
-                        <div class="mt-3">
-                            <a href="{{ route('arguments.show', $argument->id) }}">
-                                <button class="btn btn-success w-100">Show</button>
-                            </a>
-                        </div>
+                            <div class="mt-3">
+                                <a href="{{ route('arguments.show', $argument->id) }}">
+                                    <button class="btn btn-success w-100">Show</button>
+                                </a>
+                            </div>
                         @endguest
                     </div>
                 </div>
