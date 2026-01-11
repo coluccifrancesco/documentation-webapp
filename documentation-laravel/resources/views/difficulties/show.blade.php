@@ -40,17 +40,14 @@
 
             <div class="d-flex align-items-center gap-3">
                 @auth
-                    @if (Auth::user()->role === 'admin')
+                    <a href="{{ route('difficulties.edit', $difficulty->id) }}">
+                        <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
+                    </a>
 
-                        <a href="{{ route('difficulties.edit', $difficulty->id) }}">
-                            <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
-                        </a>
+                    <a href="{{ route('difficulties.sureOfDestroy', $difficulty->id) }}">
+                        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                    </a>
 
-                        <a href="{{ route('difficulties.sureOfDestroy', $difficulty->id) }}">
-                            <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                        </a>
-
-                    @endif
                 @endauth
 
                 <a href="{{ route('difficulties.index') }}">

@@ -11,17 +11,13 @@
 
             <div class="d-flex align-items-center gap-3">
                 @auth
-                    @if (Auth::user()->role === 'admin')
+                    <a href="{{ route('technologies.edit', $technology->id) }}">
+                        <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
+                    </a>
 
-                        <a href="{{ route('technologies.edit', $technology->id) }}">
-                            <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
-                        </a>
-
-                        <a href="{{ route('technologies.sureOfDestroy', $technology->id) }}">
-                            <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                        </a>
-
-                    @endif
+                    <a href="{{ route('technologies.sureOfDestroy', $technology->id) }}">
+                        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                    </a>
                 @endauth
 
                 <a href="{{ route('technologies.index') }}">

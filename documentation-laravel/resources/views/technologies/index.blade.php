@@ -7,11 +7,9 @@
             <h2 class="mb-0">Technologies list</h2>
 
             @auth
-                @if (Auth::user()->role === 'admin')
-                    <a href="{{ route('technologies.create') }}" class="">
-                        <button class="btn btn-success">Create new technology</button>
-                    </a>
-                @endif
+                <a href="{{ route('technologies.create') }}" class="">
+                    <button class="btn btn-success">Create new technology</button>
+                </a>
             @endauth
         </div>
 
@@ -28,16 +26,14 @@
                                 <button class="btn btn-success">Show</button>
                             </a>
 
-                            @auth
-                                @if (Auth::user()->role === 'admin')
-                                    <a href="{{ route('technologies.edit', $tech->id) }}">
-                                        <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
-                                    </a>
+                            @auth                    
+                                <a href="{{ route('technologies.edit', $tech->id) }}">
+                                    <button class="btn btn-warning"><i class="fa-solid fa-pen-clip"></i></button>
+                                </a>
 
-                                    <a href="{{ route('technologies.sureOfDestroy', $tech->id) }}">
-                                        <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                    </a>
-                                @endif
+                                <a href="{{ route('technologies.sureOfDestroy', $tech->id) }}">
+                                    <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                </a>
                             @endauth
                         </div>
                     </div>
