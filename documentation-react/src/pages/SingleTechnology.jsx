@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getSingleTechnology } from '../services/api';
 import GoBackBtn from '../components/GoBackBtn';
 import DocsBtn from '../components/DocsBtn';
+import ArgumentsGridRelatedToTech from '../components/ArgumentsGridRelatedToTech';
 
 export default function SingleTechnology() {
     
@@ -65,6 +66,10 @@ export default function SingleTechnology() {
             <p className='w-50'>{data?.resume || ''}</p>
 
             {data.official_page_link ? <DocsBtn documentation_link={data.official_page_link} /> : ''}
+        </div>
+
+        <div>
+            {data.arguments? <ArgumentsGridRelatedToTech arguments={data.arguments} /> : ''}
         </div>
 
     </div>
